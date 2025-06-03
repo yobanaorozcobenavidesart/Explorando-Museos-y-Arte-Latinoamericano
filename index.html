@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explorando Museos Nacionales de Colombia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+   body {
+  margin: 0;
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+    header {
+      background-color: #000000;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+    }
+    header img {
+      max-width: 450px;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #fff;
+      border: 2px solid #fff;
+    }
+    nav {
+      background-color: #111111;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      box-shadow: inset 0 -2px 5px rgba(255,255,255,0.1);
+    }
+    button {
+      background: #ffffff;
+      border: 2px solid #000000;
+      color: #000000;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.2);
+    }
+    button:hover {
+      background: #000000;
+      color: #ffffff;
+      box-shadow: 0 0 10px #fff;
+      border-color: #fff;
+    }
+    .content {
+      display: none;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #111111cc; /* negro semi-transparente */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+      color: #ffffff;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+      background-color: #000;
+      overflow: hidden;
+      display: block;
+    }
+    .author {
+      text-align: center;
+      margin: 2rem 0;
+      color: #ffffff;
+    }
+    .author img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #fff;
+      box-shadow: 0 0 15px #fffaaaff;
+    }
+    .author h3 {
+      margin: 0.5rem 0 0.2rem;
+    }
+    .author p {
+      margin: 0;
+      color: #cccccc;
+      font-style: italic;
+    }
+    .authors-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000000;
+      color: #888888;
+      font-size: 0.9rem;
+      box-shadow: inset 0 2px 5px rgba(255,255,255,0.05);
+      user-select: none;
+    }
+  </style>
+  <script>
+    function toggleContent(id) {
+      const allSections = document.querySelectorAll('.content');
+      allSections.forEach(section => {
+        section.style.display = section.id === id ? (section.style.display === 'block' ? 'none' : 'block') : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="https://explorandomuseosnacionalesdecolombia.weebly.com/uploads/1/4/7/7/147714274/published/captura-de-pantalla-2023-11-15-224547.jpg?1700162032" alt="Logo Revista" />
+  </header>
+
+  <nav>
+    <button onclick="toggleContent('inicio')">Inicio</button>
+    <button onclick="toggleContent('historia')">Historia</button>
+    <button onclick="toggleContent('revistas')">Revistas</button>
+    <button onclick="toggleContent('cuentos')">Cuentos</button>
+    <button onclick="toggleContent('podcast')">Podcast</button>
+    <button onclick="toggleContent('juegos')">Juegos</button>
+    <button onclick="toggleContent('servicios')">Servicios</button>
+    <button onclick="toggleContent('contacto')">Contacto</button>
+    <button onclick="toggleContent('autores')">Autores</button>
+  </nav>
+
+  <div id="inicio" class="content">
+    <h2>¡Bienvenidos a Explorando Museos Nacionales de Colombia!</h2>
+    <p>Sumérgete en la riqueza cultural de nuestro hermoso país a través de la historia y el arte. En esta revista, te invito a descubrir y explorar los fascinantes museos que albergan tesoros invaluablemente conectados con la identidad colombiana.</p>
+    <p>Colombia es un crisol de tradiciones, y sus museos son portales que nos transportan a través del tiempo y el espacio. Desde la arqueología precolombina hasta las expresiones artísticas contemporáneas, cada exhibición cuenta una historia única que enriquece nuestra comprensión del pasado, presente y futuro.</p>
+    <p>Me embarqué en un viaje apasionante para destacar la diversidad y la belleza que residen en los museos nacionales de Colombia. Cada número de esta revista revela una nueva faceta de nuestra rica herencia cultural.</p>
+    <p>Es un placer presentarles esta revista, una ventana a la riqueza cultural de Colombia a través de sus museos, con un enfoque especial en su impactante patrimonio artístico. Soy Yobana Orozco Benavides, y esta aventura comenzó como un proyecto universitario que floreció en una pasión por descubrir y compartir la belleza del arte colombiano.</p>
+    <p>Esta revista no solo busca ser un relato personal, sino también una invitación abierta a explorar y valorar nuestro patrimonio artístico nacional. A través de las páginas de Explorando Museos Nacionales de Colombia, espero transmitir la magia y el asombro que experimenté en cada visita.</p>
+    <p>Revistas educativas, sin ánimo de lucro, creadas con fines pedagógicos, literarios, artísticos, ambientales, tecnológicos y culturales.</p>
+  </div>
+
+  <div id="historia" class="content">
+    <h2>Nuestra Historia</h2>
+    <p>INICIADO EN NOVIEMBRE DE 2023</p>
+    <p>Esta revista nació de una experiencia transformadora durante una salida pedagógica de la Universidad del Tolima al Museo El Rayo, guiados por la catedrática Vanessa López. Allí, un taller de grabado (intaglio) despertó aún más mi pasión por el arte y la cultura de Colombia.</p>
+    <p>Como parte de ese proyecto, junto con la catedrática Claudia Rengifo, surgió el desafío de crear esta revista, que busca compartir la riqueza y espectacularidad de nuestros museos nacionales.</p>
+    <p>Quiero transmitir que el arte y la cultura son accesibles para todos, ya que muchos museos en Colombia son gratuitos o tienen costos muy asequibles.</p>
+    <p>Soy Yobana Orozco Benavides y esta revista es una ventana para explorar y valorar el patrimonio artístico de nuestro país. Más que un proyecto universitario, es el inicio de una apasionante aventura cultural.</p>
+  </div>
+
+  <div id="revistas" class="content">
+    <h2>Revistas Digitales</h2>
+    <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" src="https://heyzine.com/flip-book/5ffd636e32.html" style="height: 600px;"></iframe>
+
+    <iframe src="https://heyzine.com/flip-book/f6b3339d6e.html" style="height: 600px;"></iframe>
+    <iframe src="https://heyzine.com/flip-book/8b11ce9d5f.html" style="height: 600px;"></iframe>
+    <iframe src="https://heyzine.com/flip-book/af9110dae0.html" style="height: 600px;"></iframe>
+  </div>
+
+  <div id="cuentos" class="content">
+    <h2>Cuento Animado</h2>
+    <iframe src="https://www.youtube.com/embed/Y3_8D_ahJZk?si=R5iiSCuOfZnv-WJ4" allowfullscreen style="height: 450px;"></iframe>
+  </div>
+
+  <div id="podcast" class="content">
+    <h2>Podcast</h2>
+    <iframe src="https://www.youtube.com/embed/v4E8rj9nErk" allowfullscreen style="height: 450px;"></iframe>
+  </div>
+
+  <div id="juegos" class="content">
+    <h2>Juegos Interactivos</h2>
+    <iframe src="https://juegosrevistayobanaorozco2025.tiiny.site" allowfullscreen style="width: 100%; height: 4500px;"></iframe>
+  </div>
+
+  <div id="servicios" class="content">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Revistas digitales interactivas</li>
+      <li>Cuentos animados y narrados</li>
+      <li>Juegos educativos</li>
+      <li>Podcast culturales</li>
+    </ul>
+  </div>
+
+  <div id="contacto" class="content">
+    <h2>Contacto</h2>
+    <p>explorandomuseosnacionalesdecolo@yahoo.com</p>
+   <p>
+  <a href="https://yobanaorozcoartista.bio.link" target="_blank" rel="noopener noreferrer">
+    yobanaorozcoartista.bio.link
+  </a>
+</p>
+
+    <p>Cali - Colombia</p>
+  </div>
+
+ <div id="autores" class="content">
+  <h2>Autora</h2>
+  <div class="authors-container" style="display: flex; flex-direction: column; align-items: center;">
+    <div class="author" style="text-align: center;">
+      <!-- Imagen de la autora -->
+      <img src="https://cdn.bio.link/uploads/profile_pictures/2023-03-26/pbuGkT1rciKvlmNEv8Oyz5aZnwnFY8wR.png" 
+           alt="Yobana Orozco Benavides" 
+           style="width: 150px; height: auto; border-radius: 50%; box-shadow: 0 0 15px #ff6f00aa; margin-bottom: 1rem;" />
+
+      <h3>Yobana Orozco Benavides</h3>
+      <p>Investigadora, fotógrafa, diseñadora y narradora. Responsable del contenido, diseño, fotografía y producción de esta revista.</p>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  © 2023 Explorando Museos Nacionales de Colombia – Proyecto educativo y cultural creado por Yobana Orozco Benavides, pedagoga y artista integral.  
+  Esta obra se comparte bajo la licencia Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0).  
+  Uso libre con fines educativos, prohibido su uso comercial.  
+  Bio: <a href="https://yobanaorozcoartista.bio.link/" target="_blank" rel="noopener">https://yobanaorozcoartista.bio.link</a>
+</footer>
+
+</body>
+</html>
