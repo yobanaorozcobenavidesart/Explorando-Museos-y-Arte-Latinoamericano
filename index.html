@@ -4,7 +4,7 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Explorando Museos Nacionales de Colombia</title>
+  <title>Explorando Museos y Arte Latinoamericano</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <style>
    body {
@@ -251,138 +251,204 @@
 </div>
 
   
-<div id="convocatoria" class="content" style="font-family: 'Arial', sans-serif; line-height: 1.6; max-width: 950px; margin: auto; padding: 30px; color: #ffffff; background-color: transparent;">
+<!-- Contenedor principal -->
+<div id="convocatoria" class="content" style="font-family: 'Arial', sans-serif; line-height: 1.4; max-width: 950px; margin: auto; padding: 30px; color: #ffffff; background-color: transparent;">
+
+  <!-- Imagen tipo botón con efecto de brillo -->
   <div style="text-align: center; margin-bottom: 20px;">
-  <img src="https://i.postimg.cc/MGgzb8h2/Whats-App-Image-2025-06-27-at-9.png" alt="Convocatoria Abierta 2025" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.3);">
+    <img src="https://i.postimg.cc/MGgzb8h2/Whats-App-Image-2025-06-27-at-9.png"
+         alt="Convocatoria Abierta 2025"
+         onclick="toggleConvocatoria()"
+         class="imagen-boton">
+  </div>
+
+  <!-- Contenido desplegable -->
+  <div id="infoConvocatoria" style="display: none; animation: fadeIn 0.5s ease-in-out;">
+
+    <p style="text-align: center; margin-bottom: 10px;">
+      <strong>Convocatoria N.º 1 | Fecha de apertura:</strong> 1 de julio de 2025 | 
+      <strong>Cierre:</strong> 1 de agosto de 2025
+    </p>
+    <hr style="margin: 20px 0; border-color: #555;">
+
+    <!-- Estilos internos -->
+    <style>
+      h3 {
+        background-color: #111;
+        padding: 10px 16px;
+        border-radius: 8px;
+        color: #ffffff;
+        box-shadow: 0 0 12px #ffffff88;
+        text-shadow: 0 0 6px #ffffffcc;
+        display: inline-block;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+      h4 {
+        background-color: #111;
+        padding: 8px 14px;
+        border-radius: 8px;
+        color: #ffffff;
+        box-shadow: 0 0 10px #ffffff66;
+        display: inline-block;
+        margin-top: 25px;
+        margin-bottom: 8px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 20px;
+      }
+      ul li {
+        margin-bottom: 8px;
+        padding-left: 10px;
+        border-left: 4px solid #ffffffcc;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        box-shadow: 0 0 15px #ffffff44;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      th, td {
+        padding: 8px;
+        border: 1px solid #444;
+        background-color: #111;
+        color: #ffffff;
+        text-align: center;
+      }
+      thead th {
+        background-color: #ffffff22;
+        color: #ffffff;
+        text-shadow: 0 0 5px #ffffffcc;
+      }
+      @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+      .imagen-boton {
+        cursor: pointer;
+        max-width: 40%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .imagen-boton:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+      }
+    </style>
+
+    <!-- Contenido -->
+    <h3>Temática de esta edición:</h3>
+    <p><strong>“Rostros y raíces de América Latina”</strong><br>Reflexiona y expresa la identidad y diversidad cultural de nuestros pueblos.</p>
+
+    <h3>¿Quiénes pueden participar?</h3>
+    <p>Artistas visuales, ilustradores, fotógrafos, escritores, poetas y creadores de cualquier país latinoamericano.</p>
+
+    <h3>🧩 Categorías de participación:</h3>
+    <ul>
+      <li><strong>🎨 Artes visuales:</strong> pintura, ilustración, escultura, arte digital, etc.  
+        <br><em style="color: #cccccc;">Mínimo 1 obra, máximo 3 obras por participante.</em>
+      </li>
+      <li><strong>✍️ Literatura:</strong> cuento, relato, poesía, ensayo cultural o histórico.  
+        <br><em style="color: #cccccc;">Solo se permite postular <strong>una (1)</strong> obra literaria por participante.</em>
+      </li>
+      <li><strong>📸 Fotografía cultural y artística:</strong>  
+        <br><em style="color: #cccccc;">Mínimo 1 obra, máximo 3 fotografías por participante.</em>
+      </li>
+      <li><strong>🎭 Diseño y arte popular:</strong> creaciones artesanales, gráficas o identitarias con raíz cultural o tradicional.  
+        <br><em style="color: #cccccc;">Mínimo 1 obra, máximo 3 obras por participante.</em>
+      </li>
+    </ul>
+
+    <h3>📅 Cronograma:</h3>
+    <table>
+      <thead>
+        <tr><th>Fase</th><th>Fecha</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Apertura convocatoria</td><td>1 de julio de 2025</td></tr>
+        <tr><td>Cierre convocatoria</td><td>1 de agosto de 2025</td></tr>
+        <tr><td>Selección de obras</td><td>1 al 15 de agosto</td></tr>
+        <tr><td>Notificación</td><td>16 al 23 de agosto</td></tr>
+        <tr><td>Publicación digital</td><td>8 de septiembre</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📩 ¿Cómo postular?</h3>
+    <p>Completa el siguiente formulario en línea con tus datos y obra:</p>
+    <div style="text-align: center; margin: 15px 0;">
+      <a href="https://forms.gle/euVgR4cYoVCmMUob6" target="_blank" class="boton-elegante">📝 Ir al formulario</a>
+    </div>
+
+    <h4>📄 Documento obligatorio</h4>
+    <p>Descarga, diligencia y firma la <strong>Declaración de Autoría y Autorización de Publicación</strong>, y súbela al formulario:</p>
+    <div style="text-align: center; margin: 15px 0;">
+      <a href="https://drive.google.com/file/d/19FCm6gSclT65Mi5iq_kyVAj1luP_iEVZ/view?usp=sharing" target="_blank" class="boton-elegante">📥 Descargar Declaración</a>
+    </div>
+
+    <h3>⚠️ Derechos de autor y privacidad</h3>
+    <ul>
+      <li>Obras originales e inéditas</li>
+      <li>Participante responsable por plagio</li>
+      <li>Datos usados solo para fines de la revista</li>
+      <li>Al participar, acepta publicación digital con crédito</li>
+    </ul>
+
+  </div>
+
+  <!-- Script para mostrar/ocultar -->
+  <script>
+    function toggleConvocatoria() {
+      const info = document.getElementById('infoConvocatoria');
+      if (info.style.display === 'none') {
+        info.style.display = 'block';
+        info.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        info.style.display = 'none';
+      }
+    }
+  </script>
 </div>
 
-  <p style="text-align: center;"><strong>Convocatoria N.º 1 | Fecha de apertura:</strong> 1 de julio de 2025 | <strong>Cierre:</strong> 1 de agosto de 2025</p>
-  <hr style="margin: 20px 0; border-color: #555;">
-
- <style>
-  h3 {
-    background-color: #111;
-    padding: 12px 18px;
-    border-radius: 8px;
-    color: #ffffff;
-    box-shadow: 0 0 15px #ffffff88;
-    text-shadow: 0 0 8px #ffffffcc;
-    display: inline-block;
-    margin-top: 30px;
-  }
-  h4 {
-    background-color: #111;
-    padding: 10px 16px;
-    border-radius: 8px;
-    color: #ffffff;
-    box-shadow: 0 0 10px #ffffff66;
-    display: inline-block;
-    margin-top: 30px;
-  }
-  ul li {
-    margin-bottom: 10px;
-    padding-left: 10px;
-    border-left: 4px solid #ffffffcc;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    box-shadow: 0 0 20px #ffffff55;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  th, td {
-    padding: 10px;
-    border: 1px solid #444;
-    background-color: #111;
-    color: #ffffff;
-    text-align: center;
-  }
-  thead th {
-    background-color: #ffffff22;
-    color: #ffffff;
-    text-shadow: 0 0 5px #ffffffcc;
-  }
-</style>
 
 
-<h3>Temática de esta edición:</h3>
-<p><strong>“Rostros y raíces de América Latina”</strong><br>Reflexiona y expresa la identidad y diversidad cultural de nuestros pueblos.</p>
-
-<h3>¿Quiénes pueden participar?</h3>
-<p>Artistas visuales, ilustradores, fotógrafos, escritores, poetas y creadores de cualquier país latinoamericano.</p>
-
-<h3>🧩 Categorías de participación:</h3>
-<ul style="list-style: none; padding-left: 0;">
-  <li><strong>🎨 Artes visuales:</strong> pintura, ilustración, escultura, arte digital, etc.  
-    <br><em style="color: #cccccc;">Mínimo 1 obra, máximo 3 obras por participante.</em>
-  </li>
-  <li><strong>✍️ Literatura:</strong> cuento, relato, poesía, ensayo cultural o histórico.  
-    <br><em style="color: #cccccc;">Solo se permite postular <strong>una (1)</strong> obra literaria por participante.</em>
-  </li>
-  <li><strong>📸 Fotografía cultural y artística:</strong>  
-    <br><em style="color: #cccccc;">Mínimo 1 obra, máximo 3 fotografías por participante.</em>
-  </li>
-  <li><strong>🎭 Diseño y arte popular:</strong> creaciones artesanales, gráficas o identitarias con raíz cultural o tradicional.  
-    <br><em style="color: #cccccc;">Mínimo 1 obra, máximo 3 obras por participante.</em>
-  </li>
-</ul>
-
-<h3>📅 Cronograma:</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Fase</th>
-      <th>Fecha</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Apertura convocatoria</td><td>1 de julio de 2025</td></tr>
-    <tr><td>Cierre convocatoria</td><td>1 de agosto de 2025</td></tr>
-    <tr><td>Selección de obras</td><td>1 al 15 de agosto</td></tr>
-    <tr><td>Notificación</td><td>16 al 23 de agosto</td></tr>
-    <tr><td>Publicación digital</td><td>8 de septiembre</td></tr>
-  </tbody>
-</table>
-
-<h3>📩 ¿Cómo postular?</h3>
-<p>Completa el siguiente formulario en línea con tus datos y obra:</p>
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://forms.gle/euVgR4cYoVCmMUob6" target="_blank" class="boton-elegante">📝 Ir al formulario</a>
+<div style="text-align: center; margin-top: 50px;">
+  <h3 style="background-color: transparent; color: #ffffff; text-shadow: 0 0 12px #ff8888; font-weight: normal;">
+    ❤️ Revista sin ánimo de lucro
+  </h3>
+  <p style="color: #cccccc; font-size: 20px;">
+    Gestionado por <strong style="color: #ffffff;">Fundación Artes Multicap</strong>. Proyecto cultural gratuito y colectivo.
+  </p>
 </div>
 
-<h4>📄 Documento obligatorio</h4>
-<p>Descarga, diligencia y firma la <strong>Declaración de Autoría y Autorización de Publicación</strong>, y súbela al formulario:</p>
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/19FCm6gSclT65Mi5iq_kyVAj1luP_iEVZ/view?usp=sharing" target="_blank" class="boton-elegante">📥 Descargar Declaración</a>
-</div>
 
-<h3>⚠️ Derechos de autor y privacidad</h3>
-<ul>
-  <li>Obras originales e inéditas</li>
-  <li>Participante responsable por plagio</li>
-  <li>Datos usados solo para fines de la revista</li>
-  <li>Al participar, acepta publicación digital con crédito</li>
-</ul>
+<!-- Sección de apoyo a la iniciativa -->
+<div style="text-align: center; margin-top: 60px;">
+  <h3 style="background-color: transparent; color: #ffffff; text-shadow: 0 0 6px #00ffff; font-weight: normal;">
+    💖 ¿Quieres apoyar esta iniciativa?
+  </h3>
+  <p style="color: #cccccc; font-size: 15px; max-width: 600px; margin: auto; margin-bottom: 20px;">
+    Tu aporte voluntario ayuda a mantener esta revista viva y activa. Cada contribución cuenta 💫
+  </p>
 
-<h3>❤️ Revista sin ánimo de lucro</h3>
-<p>Gestionado por <strong>Fundación Artes Multicap</strong>. Proyecto cultural gratuito y colectivo.</p>
-
-<div style="margin-top: 30px; padding: 20px; border: 1px solid #00ffff; border-radius: 12px; background-color: #111; text-align: center; box-shadow: 0 0 20px #00ffff66;">
-  <h3><strong>¿Quieres apoyar esta iniciativa?</strong></h3>
-  <p>Tu aporte voluntario ayuda a mantener esta revista viva y activa.</p>
-
+  <!-- Botón elegante ya existente -->
   <button onclick="document.getElementById('donaciones-info').style.display='block'" class="boton-elegante">
     💖 Apoyar esta iniciativa
   </button>
 
-  <div id="donaciones-info" style="display: none; margin-top: 20px; text-align: left; font-size: 16px; color: #f0f0f0;">
+  <!-- Información que se despliega -->
+  <div id="donaciones-info" style="display: none; margin-top: 25px; font-size: 16px; color: #f0f0f0; max-width: 500px; margin-left: auto; margin-right: auto; background-color: #111; padding: 20px; border: 1px solid #00ffff; border-radius: 10px; box-shadow: 0 0 15px #00ffff55; text-align: left;">
     <p><strong>📱 Daviplata / Nequi:</strong> 3113555949</p>
     <p><strong>🏦 Western Union:</strong> Yobana Orozco Benavides – Cali, Colombia</p>
-    <p style="font-size: 14px; font-style: italic;">Gracias por tu apoyo.</p>
+    <p style="font-size: 14px; font-style: italic; color: #cccccc;">Gracias por tu apoyo. Este proyecto existe gracias a personas como tú.</p>
   </div>
 </div>
+
 
 </div>
 
@@ -512,8 +578,39 @@
   </div>
 </div>
 
+</p>
+</div>
 
- <footer style="background-color: #1e1e1e; padding: 40px 20px; font-family: 'Arial', sans-serif; color: #f1f1f1; text-align: center; border-top: 2px solid #ccc; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);">
+
+<!-- Contador de visitas al sitio -->
+<div style="background-color: #000000; padding: 40px 20px; font-family: 'Arial', sans-serif; color: #f1f1f1; text-align: center; border-top: 1px solid #000; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);">
+  <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #ffffff;">
+    Número de visitas al sitio:
+  </h3>
+  <div id="visitas" style="font-size: 24px; font-weight: bold; color: #00ffcc; transition: all 0.4s ease;">
+    Cargando...
+  </div>
+</div>
+
+<!-- Script que obtiene el número de visitas desde CountAPI -->
+<script>
+  async function actualizarContador() {
+    try {
+      const response = await fetch('https://api.countapi.xyz/hit/explorandomuseosyarte/contador');
+      const data = await response.json();
+      document.getElementById('visitas').innerText = data.value;
+    } catch (error) {
+      document.getElementById('visitas').innerText = 'Error 😢';
+      console.error('Error al obtener el contador:', error);
+    }
+  }
+
+  actualizarContador();
+</script>
+
+
+
+ <footer style="background-color: #000000; padding: 40px 20px; font-family: 'Arial', sans-serif; color: #f1f1f1; text-align: center; border-top: 2px solid #000; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);">
 
   <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #ffffff;">
     © 2023 – 2025 | Explorando Museos y Arte Latinoamericano
@@ -549,7 +646,5 @@
 
 </body>
 </html>
-
-
 
 
