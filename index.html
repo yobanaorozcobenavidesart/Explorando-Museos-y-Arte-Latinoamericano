@@ -215,11 +215,11 @@
     <button onclick="toggleContent('convocatoria')">Convocatorias</button>
 
     <button onclick="toggleContent('cuentos')">Cuentos</button>
-    <button onclick="toggleContent('podcast')">Podcast</button>
+    <button onclick="toggleContent('podcast')">Podcast/Videos</button>
     <button onclick="toggleContent('juegos')">Juegos</button>
     <button onclick="toggleContent('servicios')">Servicios</button>
     <button onclick="toggleContent('contacto')">Contacto</button>
-    <button onclick="toggleContent('autores')">Autores</button>
+    <button onclick="toggleContent('autores')">Autores/Colaboradores</button>
   </nav>
 
   <div id="inicio" class="content">
@@ -716,7 +716,7 @@ function toggleConvocatorias() {
     allowfullscreen>
 </iframe>
 
-
+</div>
 
 
 <div id="revistas Jóvenes Creadores" class="content">
@@ -819,20 +819,98 @@ function toggleConvocatorias() {
     <p>Cali - Colombia</p>
   </div>
 
- <div id="autores" class="content">
-  <h2>Autora del Sitio Web</h2>
+<div id="autores" class="content">
+
+  <!-- Artistas colaboradores -->
+  <h2 style="color: white; text-align: center;">Artistas Colaboradores</h2>
+  <div style="text-align: center; margin-top: 20px;">
+    <button onclick="toggleColaboradores()" id="btnColaboradores">
+      Ver lista de artistas colaboradores de la Revista <br> 
+      <em>Rostros y Raíces de América Latina</em> Vol. 1, N°1 (Septiembre 2025)
+    </button>
+
+    <div id="colaboradores" style="display: none; margin-top: 20px; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; background: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33; color: white;">
+      <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
+        <li>🇲🇽 <strong>Ricardo Hernández Cruz</strong> (México, Villahermosa – Tabasco)</li>
+        <li>🇨🇴 <strong>Sloth</strong> (Colombia, Bogotá)</li>
+        <li>🇨🇴 <strong>Leidy Yobana Niño Barón</strong> (Colombia, Guacamayas – Boyacá)</li>
+        <li>🇨🇴 <strong>Edwin López Fajardo</strong> (Colombia, Garzón – Huila)</li>
+        <li>🇨🇴 <strong>Nenfis Perilla</strong> (Colombia, Garzón – Huila)</li>
+        <li>🇪🇨 <strong>Fernando Freire Manzano – Kolibry</strong> (Ecuador, Guayaquil)</li>
+        <li>🇳🇮 <strong>Luisa Amanda Solano Mendoza</strong> (Nicaragua, Corinto / Italia)</li>
+        <li>🇨🇴 <strong>Yobana Orozco Benavides</strong> (Colombia, Cali – Valle del Cauca)</li>
+        <li>🏛️ <strong>Museo Itinerante del Patrimonio</strong> (Ecuador, fundadores: Fernando Freire Manzano y Renée Paredes González)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Autora del sitio -->
+  <h2 style="color: white; text-align: center; margin-top: 50px;">Autora</h2>
   <div class="authors-container" style="display: flex; flex-direction: column; align-items: center;">
-    <div class="author" style="text-align: center;">
+    <div class="author" style="text-align: center; color: white;">
       <!-- Imagen de la autora -->
       <img src="https://cdn.bio.link/uploads/profile_pictures/2023-03-26/pbuGkT1rciKvlmNEv8Oyz5aZnwnFY8wR.png" 
            alt="Yobana Orozco Benavides" 
-           style="width: 150px; height: auto; border-radius: 50%; box-shadow: 0 0 15px #ff6f00aa; margin-bottom: 1rem;" />
+           style="width: 150px; height: auto; border-radius: 50%; box-shadow: 0 0 20px #ffffff88; margin-bottom: 1rem;" />
 
-      <h3>Yobana Orozco Benavides</h3>
-      <p>Investigadora, fotógrafa, diseñadora y narradora. Responsable del contenido, diseño, fotografía y producción de esta revista.</p>
+      <h3 style="margin: 10px 0;">Yobana Orozco Benavides</h3>
+      <p>Editora responsable. Gestora cultural, artista integral y representante legal de la Fundación Artes Multicap.</p>
     </div>
   </div>
 </div>
+
+<style>
+  /* Botón interactivo con luz */
+  #btnColaboradores {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 5px #ffffffaa;
+    box-shadow: 0 0 15px #ffffff33;
+  }
+
+  #btnColaboradores:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px #ffffffaa, 0 0 40px #ffffff77, 0 0 60px #ffffff55;
+    transform: scale(1.05);
+  }
+
+  /* Animación de resplandor */
+  #btnColaboradores {
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px #ffffff33, 0 0 20px #ffffff22;
+    }
+    to {
+      box-shadow: 0 0 20px #ffffffaa, 0 0 40px #ffffff55;
+    }
+  }
+</style>
+
+<script>
+  function toggleColaboradores() {
+    const div = document.getElementById('colaboradores');
+    const btn = document.getElementById('btnColaboradores');
+    if (div.style.display === 'none' || div.style.display === '') {
+      div.style.display = 'block';
+      btn.textContent = "Ocultar artistas colaboradores";
+    } else {
+      div.style.display = 'none';
+      btn.innerHTML = 'Ver lista de artistas colaboradores de la Revista <br> <em>Rostros y Raíces de América Latina</em> Vol. 1, N°1 (Septiembre 2025)';
+    }
+  }
+</script>
+
 
 </p>
 </div>
