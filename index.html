@@ -784,6 +784,7 @@ function toggleConvocatorias() {
 
 <div id="obrasAnimadas" class="content">
   <h2>Obras Animadas</h2>
+  
   <iframe width="560" height="315" 
     src="https://www.youtube.com/embed/ZK7DG5HGSmY?si=mTLVwNQ_K8ooxJj7"
     title="YouTube video player" frameborder="0" 
@@ -795,19 +796,22 @@ function toggleConvocatorias() {
 
   <div id="cuentos" class="content">
     <h2>Cuento Animado</h2>
-    <!-- Canva Embed reemplazando el video de YouTube -->
-<div style="position: relative; width: 100%; height: 0; padding-top: 100%; 
-            padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); 
-            margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; 
-            border-radius: 8px; will-change: transform;">
-  <iframe 
-    loading="lazy" 
-    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-    src="https://www.canva.com/design/DAGQLrPvAeo/zEBrIiOXcI6TXIlguyCAsQ/view?embed" 
-    allowfullscreen="allowfullscreen" 
-    allow="fullscreen">
-  </iframe>
+   <!-- Contenedor centrado -->
+<div style="display: flex; justify-content: center; margin-top: 1.6em; margin-bottom: 0.9em;">
+  <!-- Canva Embed más pequeño -->
+  <div style="position: relative; width: 50%; height: 0; padding-top: 50%; 
+              box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); 
+              overflow: hidden; border-radius: 8px; will-change: transform;">
+    <iframe 
+      loading="lazy" 
+      style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+      src="https://www.canva.com/design/DAGQLrPvAeo/zEBrIiOXcI6TXIlguyCAsQ/view?embed" 
+      allowfullscreen="allowfullscreen" 
+      allow="fullscreen">
+    </iframe>
+  </div>
 </div>
+
 
 <!-- Enlace a Canva por si quieren abrir en otra pestaña -->
 <a href="https://www.canva.com/design/DAGQLrPvAeo/zEBrIiOXcI6TXIlguyCAsQ/view?utm_content=DAGQLrPvAeo&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
