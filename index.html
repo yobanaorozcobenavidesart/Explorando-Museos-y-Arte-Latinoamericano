@@ -221,8 +221,11 @@
     <button onclick="toggleContent('podcast')">Podcast</button>
     <button onclick="toggleContent('juegos')">Juegos</button>
     <button onclick="toggleContent('servicios')">Servicios</button>
-    <button onclick="toggleContent('contacto')">Contacto</button>
-    <button onclick="toggleContent('autores')">Autores/Colaboradores</button>
+    
+      <button onclick="toggleContent('autores')">Autores/Colaboradores</button>
+    <button onclick="window.open('https://forms.gle/16ojPMq5cWfMFbGw9', '_blank');">tu opinión</button>
+      <button onclick="toggleContent('contacto')">Contacto</button>
+    
   </nav>
 
   <div id="inicio" class="content">
@@ -868,7 +871,7 @@ function toggleConvocatorias() {
 
 
   <div id="juegos" class="content">
-    <h2>Juegos</h2>
+    
     <!-- Primer iframe del juego principal -->
 <iframe src="https://juegosmuseosnacionalescolombia.netlify.app/" 
         allowfullscreen 
@@ -968,6 +971,43 @@ function toggleConvocatorias() {
         <li>🏛️ <strong>Museo Itinerante del Patrimonio</strong> (Ecuador, fundadores: Fernando Freire Manzano y Renée Paredes González)</li>
       </ul>
     </div>
+
+    <!-- Nuevo botón: Jóvenes Artistas -->
+    <button onclick="toggleJovenes()" id="btnJovenes" style="margin-top: 20px;">
+      Ver lista de jóvenes artistas colaboradores de la Revista <br>
+      <em>Explosión Creativa en América Latina</em> Vol. 1, N°1 (Octubre 2025)
+    </button>
+
+    <div id="jovenes" style="display: none; margin-top: 20px; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; background: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33; color: white;">
+      <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
+        <li><strong>Jóvenes Artistas Participantes – Artes Plásticas y Visuales</strong></li>
+        <li>María Camila Tuquerres Ruiz</li>
+        <li>Luciana Ortega López</li>
+        <li>David Rosero Orozco</li>
+        <li>Luis Eduardo Moreno</li>
+        <li>Ashly Muñoz</li>
+        <li>María Camila Higuita</li>
+        <li>Daniel Alexander Ortiz Orozco</li>
+        <li>Valeria Castillo Pinto</li>
+        <br>
+        <li><strong>Artistas Participantes – Literatura</strong></li>
+        <li>Valeria Ramírez Berrío</li>
+        <br>
+        <li><strong>Artistas Participantes – Fotografía</strong></li>
+        <li>Diego Andrés Montenegro Villar</li>
+        <br>
+        <li><strong>Instituciones educativas aliadas</strong></li>
+<li>Centro Educativo Sebastián De Belalcázar</li>
+<li>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0jBM6u9VrHlJubeMAW8Dwo9kSvFDwdGXB2A&s" 
+       alt="Logo Centro Educativo Sebastián De Belalcázar" 
+       style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 0 10px #ffffff55;" />
+</li>
+
+
+
+      </ul>
+    </div>
   </div>
 
   <!-- Autora del sitio -->
@@ -981,6 +1021,21 @@ function toggleConvocatorias() {
 
       <h3 style="margin: 10px 0;">Yobana Orozco Benavides</h3>
       <p>Editora responsable. Gestora cultural nacional e internacional, artista integral, escritora, pedagoga y representante legal de la Fundación Artes Multicap.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleColaboradores() {
+    const elem = document.getElementById("colaboradores");
+    elem.style.display = elem.style.display === "none" ? "block" : "none";
+  }
+
+  function toggleJovenes() {
+    const elem = document.getElementById("jovenes");
+    elem.style.display = elem.style.display === "none" ? "block" : "none";
+  }
+</script>
     </div>
   </div>
 </div>
