@@ -383,6 +383,10 @@
  <!-- Botón principal que despliega las convocatorias -->
 <h2 style="text-align: center; cursor: pointer; color: #ffffff; background-color: #000; padding: 12px 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff; transition: background 0.3s ease;" 
     onclick="toggleConvocatorias()">Convocatorias 2025 🔽</h2>
+  
+  
+  
+  
 
 <!-- Contenedor oculto con los botones de convocatoria 1 y 2 -->
 <div id="contenedorConvocatorias" style="display: none; margin-top: 30px; text-align: center; animation: fadeIn 0.5s ease-in-out;">
@@ -407,6 +411,8 @@
          style="cursor: pointer; max-width: 30%; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.3); transition: transform 0.3s ease, box-shadow 0 0 25px rgba(255, 255, 255, 0.9);" />
   </a>
 </div>
+  
+  
 
 
 <!-- SCRIPT para desplegar los botones -->
@@ -422,7 +428,37 @@ function toggleConvocatorias() {
 }
 </script>
 
+</div> <!-- FIN contenedorConvocatorias 2025 -->
 
+<!-- ================================================= -->
+<!-- ============ CONVOCATORIAS 2026 ================= -->
+<!-- ================================================= -->
+
+<h2 style="text-align: center; cursor: pointer; color: #ffffff; background-color: #000; padding: 12px 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff; transition: background 0.3s ease; margin-top:40px;" 
+    onclick="toggleConvocatorias2026()">
+  Convocatorias 2026 🔽
+</h2>
+
+<div id="contenedorConvocatorias2026" style="display:none; margin-top:30px; text-align:center; animation: fadeIn 0.5s ease-in-out;">
+
+  <div style="margin:30px 0;">
+    <a href="https://convocatoria-n-2-voces-que-habitan-el.netlify.app/" target="_blank">
+      <img 
+        src="https://i.postimg.cc/d1Y7ffmF/Chat-GPT-Image-8-ene-2026-11-18-29-a-m-YYTR.jpg"
+        alt="Convocatoria 2026 - Voces que Habitan el Territorio"
+        style="cursor:pointer; max-width:30%; border-radius:12px; box-shadow:0 0 15px rgba(255,255,255,0.3); transition:transform 0.3s ease;"
+      >
+    </a>
+  </div>
+
+</div>
+
+<script>
+function toggleConvocatorias2026() {
+  const cont = document.getElementById("contenedorConvocatorias2026");
+  cont.style.display = cont.style.display === "none" ? "block" : "none";
+}
+</script>
 
  
 <!-- ESTILOS -->
