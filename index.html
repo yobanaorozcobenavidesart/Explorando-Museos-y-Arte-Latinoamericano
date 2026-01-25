@@ -212,8 +212,10 @@
   </button>
 </div>
     
-    <button onclick="toggleContent('convocatoria')">Convocatorias</button>
+        <button onclick="toggleContent('convocatoria')">Convocatorias Revistas</button>
     
+          <button onclick="toggleContent('autores')">Autores/Colaboradores</button>
+
     <button onclick="toggleContent('obrasAnimadas')">Obras animadas</button>
 
 
@@ -222,7 +224,7 @@
     <button onclick="toggleContent('juegos')">Juegos</button>
     <button onclick="toggleContent('servicios')">Servicios</button>
     
-      <button onclick="toggleContent('autores')">Autores/Colaboradores</button>
+
     <button onclick="window.open('https://forms.gle/16ojPMq5cWfMFbGw9', '_blank');">tu opinión</button>
       <button onclick="toggleContent('contacto')">Contacto</button>
     
@@ -659,137 +661,151 @@ function toggleConvocatorias2026() {
 </div>
 
   <div id="revistas" class="content">
-<h2> Revistas Digitales Artísticas, Educativas y Culturales de Colombia </h2>
+<h2> Revista Explorando Museos Nacionales de Colombia</h2>
       <h2>ISSN:3114-9243</h2>
-   <iframe 
-  allowfullscreen="allowfullscreen" 
-  allow="clipboard-write" 
-  scrolling="no" 
-  class="fp-iframe" 
-  src="https://heyzine.com/flip-book/44e3e6e4a4.html" 
-  style="border: 1px solid lightgray; width: 100%; height: 400px;">
-</iframe>
+        <p><strong>Periodicidad:</strong> Cuatrimestral.</p>
+    <p>
+La revista <em>Explorando Museos Nacionales de Colombia</em> es una publicación digital de acceso abierto que difunde contenidos artísticos, educativos y culturales sobre el patrimonio museal colombiano, basados en investigación en campo, observación directa y verificación editorial. El proyecto es independiente y cuenta con el respaldo y la gestión de la Fundación Artes Multicap.
+</p>
 
 
-    
-   <!-- ENLACE DEL DOI (blanco, centrado, limpio) -->
-<div style="text-align: center; margin-top: 15px;">
-  <a href="https://doi.org/10.5281/zenodo.17642300"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17642300.svg
-" alt="DOI"></a>
-</div> 
+    <p><strong>Público:</strong><br>
+    La revista está dirigida a docentes, investigadores, estudiantes, artistas, gestores culturales y profesionales de las áreas de arte, educación, cultura, museología y humanidades, así como a públicos interesados en la reflexión y divulgación del patrimonio cultural y museal colombiano.
+    </p>
+    <p><strong>Comité editorial principal:</strong><br>
+    Yobana Orozco Benavides – Editora y coordinadora editorial.
+    </p>
 
-    
-    <iframe 
-  allowfullscreen="allowfullscreen" 
-  allow="clipboard-write" 
-  scrolling="no" 
-  class="fp-iframe" 
-  src="https://heyzine.com/flip-book/d4848b5663.html" 
-  style="border: 1px solid lightgray; width: 100%; height: 400px;">
-</iframe>
 
 
     
-   <!-- ENLACE DEL DOI (blanco, centrado, limpio) -->
-<div style="text-align: center; margin-top: 15px;">
-  <a href="https://doi.org/10.5281/zenodo.16809514"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809514.svg" alt="DOI"></a>
+   <style>
+.revistas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.revista-item iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid lightgray;
+}
+
+.revista-item .doi {
+  text-align: center;
+  margin-top: 15px;
+}
+</style>
+
+<div class="revistas-grid">
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/44e3e6e4a4.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.17642300">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17642300.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/d4848b5663.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809514">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809514.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/9606141ad9.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809438">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809438.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/e6000cee15.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809570">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809570.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/390c4f40ca.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809590">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809590.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/956f34b8e9.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809602">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809602.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
 </div>
-   
-<!-- VISOR DE LA REVISTA Museo Chatarra -->
-<iframe 
-    src="https://heyzine.com/flip-book/9606141ad9.html" 
-    width="100%" 
-    height="400" 
-    style="border:none;" 
-    allowfullscreen="allowfullscreen" 
-    allow="clipboard-write" 
-    scrolling="no" 
-    class="fp-iframe">
-</iframe>
 
-
-
-<!-- ENLACE DEL DOI (blanco, centrado, limpio) -->
-<div style="text-align: center; margin-top: 15px;">
-  <a href="https://doi.org/10.5281/zenodo.16809438"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809438.svg" alt="DOI"></a>
-</div>
-
-
-<!-- VISOR DE LA REVISTA Museo Art Lan -->
-<iframe 
-    src="https://heyzine.com/flip-book/e6000cee15.html" 
-    width="100%" 
-    height="400" 
-    style="border:none;" 
-    allowfullscreen="allowfullscreen" 
-    allow="clipboard-write" 
-    scrolling="no" 
-    class="fp-iframe">
-</iframe>
-
-
-    
-
-
-<!-- ENLACE DEL DOI DEBAJO (blanco y visible) -->
-<div style="text-align: center; margin-top: 15px;">
- <a href="https://doi.org/10.5281/zenodo.16809570"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809570.svg" alt="DOI"></a>
-</div>
-
-    
-<!-- VISOR DE LA REVISTA BOTERO -->
-<iframe 
-    src="https://heyzine.com/flip-book/390c4f40ca.html" 
-    width="100%" 
-    height="400" 
-    style="border:none;" 
-    allowfullscreen="allowfullscreen" 
-    allow="clipboard-write" 
-    scrolling="no" 
-    class="fp-iframe">
-</iframe>
-
-
-
-<!-- ENLACE DEL DOI DEBAJO (blanco y centrado) -->
-<div style="text-align: center; margin-top: 15px;">
- <a href="https://doi.org/10.5281/zenodo.16809590"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809590.svg" alt="DOI"></a>
-</div>
-
-    
-<!-- VISOR DE LA REVISTA Museo Rayo -->
-<iframe 
-    src="https://heyzine.com/flip-book/956f34b8e9.html" 
-    width="100%" 
-    height="400" 
-    style="border:none;" 
-    allowfullscreen="allowfullscreen" 
-    allow="clipboard-write" 
-    scrolling="no" 
-    class="fp-iframe">
-</iframe>
-
-
-
-<!-- ENLACE DEL DOI DEBAJO (blanco y centrado) -->
-<div style="text-align: center; margin-top: 15px;">
-  <a href="https://doi.org/10.5281/zenodo.16809602"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809602.svg" alt="DOI"></a>
-</div>
 
     
   </div>
   
- <div id="revistas Latinoamericanas" class="content">
+<div id="revistas Latinoamericanas" class="content">
     <h2 style="text-align: left; margin-bottom: 8px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
-  Revistas Explorando Arte y Cultura de Latinoamérica
+  Revista Explorando Arte y Cultura de Latinoamérica
 </h2>
 <p style="text-align: left; margin: 0; font-size: 18px; font-style: italic; color: #ffffff; font-family: 'Times New Roman', serif;">
   Arte Sin Fronteras – Ediciones Internacionales de Artistas Mayores de Edad
 </p>
 <h2 style="text-align: left; margin-top: 4px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
-  ISSN: 3114-9871
+  ISSN (digital): 3114-9871
 </h2>
 
+  <p style="text-align:left; margin-top:6px; font-size:18px; color:#ffffff; font-family:'Times New Roman', serif;">
+    <strong>Periodicidad:</strong> Semestral
+  </p>
+
+ 
+
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify;">
+    La revista <em>Explorando Arte y Cultura de Latinoamérica</em> es una publicación digital de acceso abierto orientada a la difusión, análisis y visibilización de prácticas artísticas y expresiones culturales contemporáneas de América Latina, promoviendo el diálogo intercultural y el reconocimiento de la diversidad creativa en contextos regionales e internacionales.
+  </p>
+
+ 
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify;">
+    La revista desarrolla una línea editorial cultural y artístico-educativa que articula procesos de curaduría editorial, análisis contextual y verificación de contenidos, favoreciendo la reflexión crítica, la circulación de saberes y el intercambio cultural entre artistas y comunidades creativas de distintos países de América Latina.
+  </p>
+
+  <h3 style="color:#ffffff; font-family:'Times New Roman', serif;">Público</h3>
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify;">
+    Artistas, docentes, investigadores, estudiantes, gestores culturales y profesionales de las áreas de arte, cultura, educación y humanidades, así como públicos interesados en el arte y la cultura latinoamericana.
+  </p>
+
+  <h3 style="color:#ffffff; font-family:'Times New Roman', serif;">Comité editorial principal</h3>
+  <p style="color:#ffffff; font-family:'Times New Roman', serif;">
+    <strong>Yobana Orozco Benavides</strong><br>
+    Editora y coordinadora editorial.
+  </p>
+
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify;">
+    Proyecto editorial independiente respaldado y gestionado por la <strong>Fundación Artes Multicap</strong>.
+  </p>
    
 <iframe 
   src="https://heyzine.com/flip-book/531e2dd77c.html" 
@@ -815,7 +831,7 @@ function toggleConvocatorias2026() {
 
 <div id="revistas Jóvenes Creadores" class="content">
  
-  <h2 style="text-align: left; margin-bottom: 8px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
+    <h2 style="text-align: left; margin-bottom: 8px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
     Revistas Jóvenes Creadores de Latinoamérica (Internacional)
   </h2>
 
@@ -824,8 +840,32 @@ function toggleConvocatorias2026() {
   </p>
 
   <h2 style="text-align: left; margin-top: 4px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
-    ISSN: 3115-0357
+    ISSN (digital): 3115-0357
   </h2>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Periodicidad: Semestral
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    La revista <em>Jóvenes Creadores de Latinoamérica</em> es una publicación digital de acceso abierto dedicada a la difusión y visibilización de procesos creativos, expresiones artísticas y manifestaciones culturales desarrolladas por niños, niñas y jóvenes de América Latina, entre los 8 y 17 años, en contextos educativos, formativos y culturales.
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Su enfoque editorial es artístico-educativo y se fundamenta en la curaduría editorial, el acompañamiento pedagógico y la verificación de contenidos, promoviendo la formación creativa, el intercambio intercultural y la participación de instituciones educativas mediante invitaciones y procesos de acompañamiento a nivel nacional e internacional.
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Público: niños, niñas y jóvenes creadores; docentes, formadores, instituciones educativas, gestores culturales y públicos interesados en el arte, la educación y la cultura latinoamericana con enfoque formativo.
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Comité editorial principal: <strong>Yobana Orozco Benavides</strong>, editora y coordinadora editorial.
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Proyecto editorial independiente respaldado y gestionado por la <strong>Fundación Artes Multicap</strong>.
+  </p>
 
   <!-- Flipbook incrustado actualizado -->
   <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
@@ -1287,7 +1327,7 @@ function toggleConvocatorias2026() {
 <footer style="background-color: #000000; padding: 40px 20px; font-family: 'Arial', sans-serif; color: #f1f1f1; text-align: center; border-top: 3px solid #ffffff; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); font-size: 11px; line-height: 1.6;">
 
   <h3 style="font-size: 15px; font-weight: bold; margin-bottom: 10px; color: #ffffff;">
-    © 2023 – 2025 | Explorando Museos y Arte Latinoamericano
+    © 2023 – 2026 | Explorando Museos y Arte Latinoamericano
   </h3>
 
   <p style="max-width: 750px; margin: auto;">
