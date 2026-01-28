@@ -1,355 +1,1542 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Políticas Editoriales | Fundación Artes Multicap</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explorando Museos y Arte Latinoamericano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
+   body {
+  margin: 0;
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+    header {
       background-color: #000000;
-      color: #ffffff;
-      font-family: "Times New Roman", serif;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
+      padding: 3rem 1rem;
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
-      font-weight: bold;
-      text-shadow: 1px 1px 3px rgba(255,255,255,0.2);
+      box-shadow: 0 4px 15px rgba(255,255,255,0.2);
     }
-
-    p.intro {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    .accordion {
-      border: 1px solid #555;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(255,255,255,0.05);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .accordion:hover {
-      box-shadow: 0 6px 12px rgba(255,255,255,0.15);
-    }
-
-    /* HEADER FLEX PARA TEXTO + LOGO IZQUIERDO */
-    .accordion-header {
-      display: flex;
-      align-items: center; /* centra verticalmente */
-      background-color: #111;
-      padding: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid #333;
-      color: #ffffff;
-    }
-
-    .accordion-header:hover {
-      background-color: #ffffff;
-      color: #000000;
-    }
-
-    .accordion-logo {
-      margin-right: 20px; /* espacio entre logo y texto */
-      flex-shrink: 0;
-    }
-
-    .accordion-logo img {
-      width: 230px; /* tamaño más grande */
+    header img {
+      max-width: 450px;
+      width: 100%;
       height: auto;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #fff;
+      border: 2px solid #fff;
     }
-
-    .accordion-logo img:hover {
-      transform: scale(1.1);
-    }
-
-    .accordion-header div.texto-titulo {
+    nav {
+      background-color: #111111;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      box-shadow: inset 0 -2px 5px rgba(255,255,255,0.1);
     }
-
-    .accordion-header h2,
-    .accordion-header span {
-      margin: 0;
-      transition: color 0.3s ease;
+    button {
+      background: #ffffff;
+      border: 2px solid #000000;
+      color: #000000;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.2);
     }
-
-    .accordion-header h2 {
-      font-size: 22px;
-      font-weight: bold;
+    button:hover {
+      background: #000000;
+      color: #ffffff;
+      box-shadow: 0 0 10px #fff;
+      border-color: #fff;
     }
-
-    .accordion-header span {
-      display: block;
-      font-size: 14px;
-      margin-top: 6px;
-      color: #ccc;
-    }
-
-    .accordion-content {
+    .content {
       display: none;
-      padding: 30px;
-      background-color: #111;
-      text-align: left;
-      line-height: 1.7;
-    }
-
-    .accordion-content h3 {
-      margin-top: 24px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    }
-
-    .accordion-content p,
-    .accordion-content ul {
-      font-size: 16px;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #111111cc; /* negro semi-transparente */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
       color: #ffffff;
     }
-
-    .accordion-content ul {
-      padding-left: 20px;
+    iframe {
+      width: 100%;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+      background-color: #000;
+      overflow: hidden;
+      display: block;
     }
-
-    footer {
-      margin-top: 60px;
+    .author {
       text-align: center;
-      font-size: 14px;
-      opacity: 0.8;
+      margin: 2rem 0;
+      color: #ffffff;
+    }
+    .author img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #fff;
+      box-shadow: 0 0 15px #fffaaaff;
+    }
+    .author h3 {
+      margin: 0.5rem 0 0.2rem;
+    }
+    .author p {
+      margin: 0;
+      color: #cccccc;
+      font-style: italic;
+    }
+    .authors-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #000000;
+      color: #888888;
+      font-size: 0.9rem;
+      box-shadow: inset 0 2px 5px rgba(255,255,255,0.05);
+      user-select: none;
     }
   </style>
-
   <script>
-    function toggleAccordion(id) {
-      const contents = document.querySelectorAll('.accordion-content');
-      contents.forEach(content => {
-        if (content.id !== id) {
-          content.style.display = 'none';
-        }
+    function toggleContent(id) {
+      const allSections = document.querySelectorAll('.content');
+      allSections.forEach(section => {
+        section.style.display = section.id === id ? (section.style.display === 'block' ? 'none' : 'block') : 'none';
       });
-      const element = document.getElementById(id);
-      element.style.display = element.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </head>
-
 <body>
+<header style="text-align: center; margin-top: 20px;">
+  <img src="https://i.postimg.cc/4NjxHQ4y/Whats-App-Image-2025-06-27-at-9.jpg" alt="Logo Revista" style="max-width: 90%; height: auto; border-radius: 10px;" />
+</header>
 
-<div class="container">
 
-  <h1>Políticas Editoriales</h1>
 
-  <p class="intro">
-    En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas
-    gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto,
-    respeto por la autoría y ética editorial.
+  <nav>
+    <button onclick="toggleContent('inicio')">Inicio</button>
+    <button onclick="toggleContent('historia')">Historia</button>
+   <div style="position: relative; width: 200px; height: 70px; margin-bottom: 10px;">
+  <span style="position: absolute;
+               top: 5px;
+               left: 0;
+               right: 0;
+               text-align: center;
+               font-weight: bold;
+               font-size: 18px;
+               font-family: 'Times New Roman', serif;
+               color: black; /* Cambiado a negro */
+               text-shadow: 1px 1px 2px #ffffff;">
+    ISSN:3114-9243
+  </span>
+
+  <button onclick="toggleContent('revistas')" 
+          style="background-image: url('https://i.postimg.cc/KvGnsFtB/Whats-App-Image-2025-06-27-at-9-00-51-AM.jpg'); 
+                 background-size: contain; 
+                 background-repeat: no-repeat; 
+                 background-position: 0px 25px; 
+                 width: 200px; 
+                 height: 88px; 
+                 border: none; 
+                 cursor: pointer;">
+  </button>
+</div>
+
+
+
+    <div style="position: relative; width: 200px; height: 70px; margin-bottom: 10px;">
+  <span style="position: absolute;
+               top: 5px;
+               left: 0;
+               right: 0;
+               text-align: center;
+               font-weight: bold;
+               font-size: 18px;
+               font-family: 'Times New Roman', serif;
+               color: black;
+               text-shadow: 1px 1px 2px #ffffff;">
+    ISSN: 3114-9871
+  </span>
+
+  <button onclick="toggleContent('revistas Latinoamericanas')" 
+          style="background-image: url('https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-1.jpg'); 
+                 background-size: contain; 
+                 background-repeat: no-repeat; 
+                 background-position: 0px 25px; 
+                 width: 200px; 
+                 height: 85px; 
+                 border: none; 
+                 cursor: pointer;">
+  </button>
+</div>
+    <div style="position: relative; width: 200px; height: 70px; margin-bottom: 10px;">
+  <span style="position: absolute;
+               top: 5px;
+               left: 0;
+               right: 0;
+               text-align: center;
+               font-weight: bold;
+               font-size: 18px;
+               font-family: 'Times New Roman', serif;
+               color: black;
+               text-shadow: 1px 1px 2px #ffffff;">
+    ISSN: 3115-0357
+  </span>
+
+  <button onclick="toggleContent('revistas Jóvenes Creadores')" 
+          style="background-image: url('https://i.postimg.cc/6qnBHMPr/Whats-App-Image-2025-06-27-at-9-1-1.png'); 
+                 background-size: contain; 
+                 background-repeat: no-repeat; 
+                 background-position: 0px 25px; 
+                 width: 200px; 
+                 height: 85px; 
+                 border: none; 
+                 cursor: pointer;">
+  </button>
+</div>
+    
+    <a href="https://pol-ticaseditoriales.netlify.app/" target="_blank" style="text-decoration: none;">
+  <button>Políticas Editoriales</button>
+</a>
+
+    
+        <button onclick="toggleContent('convocatoria')">Convocatorias Revistas</button>
+    
+     <button onclick="toggleContent('juegos')">Juegos Revistas</button>
+    
+          <button onclick="toggleContent('autores')">Autores/Colaboradores</button>
+
+    <button onclick="toggleContent('obrasAnimadas')">Obras animadas</button>
+
+
+    <button onclick="toggleContent('cuentos')">Cuentos</button>
+    <button onclick="toggleContent('podcast')">Podcast</button>
+   
+    <button onclick="toggleContent('servicios')">Servicios</button>
+    
+
+    <button onclick="window.open('https://forms.gle/16ojPMq5cWfMFbGw9', '_blank');">tu opinión</button>
+      <button onclick="toggleContent('contacto')">Contacto</button>
+    
+  </nav>
+
+  <div id="inicio" class="content">
+  <h2>
+    ¡Bienvenidas y bienvenidos a<br><span style="color: #ffffff;">Explorando Museos y Arte Latinoamericano!</span>
+  </h2>
+
+  <p style="font-size: 17px; line-height: 1.7; text-align: justify;">
+    Esta plataforma nace desde el corazón de América Latina para compartir la riqueza cultural que habita en nuestros museos, comunidades y expresiones artísticas. Aquí convergen el arte visual, la literatura, la historia, la tecnología y la creatividad de nuestros pueblos, como un reflejo vivo de nuestra identidad.
   </p>
 
-  <!-- REVISTA ARTE Y CULTURA -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion('politica-arte')">
-      <div class="accordion-logo">
-        <img src="https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-(1).jpg" alt="Logo Arte y Cultura">
-      </div>
-      <div class="texto-titulo">
-        <h2>Revista Explorando Arte y Cultura de Latinoamérica</h2>
-        <span>ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad</span>
-      </div>
+  <p style="font-size: 17px; line-height: 1.7; text-align: justify;">
+    Nuestro proyecto se originó en Colombia con un enfoque educativo hacia los museos nacionales. Hoy damos un paso más allá: expandimos nuestra mirada hacia todo el continente latinoamericano, integrando artistas, docentes, estudiantes y amantes del arte en una propuesta abierta y sin ánimo de lucro.
+  </p>
+
+  <p style="font-size: 17px; line-height: 1.7; text-align: justify;">
+    Desde la arqueología precolombina hasta las expresiones contemporáneas, cada edición de la revista es una invitación a conocer, valorar y aprender del patrimonio artístico que nos une. Creemos que el arte educa, inspira, transforma... y también sana.
+  </p>
+
+  <p style="font-size: 17px; line-height: 1.7; text-align: justify;">
+    En <strong>Explorando Museos y Arte Latinoamericano</strong>, comprendemos que <strong>el arte, la literatura y los nuevos medios</strong> no solo son herramientas educativas, sino también <strong>vehículos de sanación emocional</strong>. Son caminos que fortalecen la inteligencia emocional, estimulan la empatía y permiten expresar lo que a veces no se puede decir con palabras.
+  </p>
+
+  <p style="font-size: 17px; line-height: 1.7; text-align: justify;">
+    Además, esta plataforma es una <strong>puerta abierta para los artistas</strong>: un espacio de visibilidad, reconocimiento y conexión con públicos de toda América Latina. Creemos en el poder del arte para construir comunidad, para sanar y para educar.
+  </p>
+
+  <p style="font-size: 17px; line-height: 1.7; text-align: justify;">
+    Mi nombre es <strong>Yobana Orozco Benavides</strong>, y este sueño comenzó como un proyecto universitario. Hoy es una ventana abierta a la educación, la inclusión, el arte y la libertad creativa. Una revista colaborativa que reúne voces de todas las edades y territorios.
+  </p>
+
+  <p style="font-size: 18px; font-style: italic; text-align: center; margin-top: 30px; color: #ffffff;">
+    ¡Gracias por ser parte de esta aventura cultural!  
+    <br>Explora, aprende, crea, comparte... y sana.
+  </p>
+
+  <!-- Misión / Visión / Filosofía -->
+  <div style="margin-top: 50px;">
+    <h3 style="color: #ffffff; text-align: center; margin-bottom: 20px;">Misión</h3>
+    <p style="font-size: 16px; text-align: justify;">
+      Fomentar la educación cultural a través de contenidos artísticos accesibles, promoviendo el aprendizaje colaborativo, la creatividad, la inteligencia emocional y el reconocimiento del patrimonio cultural latinoamericano.
+    </p>
+
+    <h3 style="color: #ffffff; text-align: center; margin-top: 40px; margin-bottom: 20px;">Visión</h3>
+    <p style="font-size: 16px; text-align: justify;">
+      Ser una plataforma educativa, cultural y emocionalmente significativa de referencia en América Latina, que conecte artistas, educadores y estudiantes mediante experiencias transmedia que inspiren transformación social y personal.
+    </p>
+
+    <h3 style="color: #ffffff; text-align: center; margin-top: 40px; margin-bottom: 20px;">Filosofía</h3>
+    <p style="font-size: 16px; text-align: justify;">
+      Creemos en un arte libre, inclusivo y comunitario. Apostamos por el conocimiento compartido, la educación emocional, la cultura como puente entre generaciones y el arte como herramienta terapéutica y de transformación.
+    </p>
+  </div> <!-- Cierre correcto de la sección misión-visión-filosofía -->
+
+  <!-- Botones redes sociales -->
+  <div style="text-align: center; margin-top: 50px;">
+    <p style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #ffffff;">🔗 ¡Conéctate con nuestras plataformas!</p>
+    
+    <a href="https://www.facebook.com/ArtesMulticap/?locale=es_LA" target="_blank" title="Facebook" style="margin: 10px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width: 40px; height: 40px;">
+    </a>
+
+    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=nv28zdt" target="_blank" title="Instagram" style="margin: 10px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" style="width: 40px; height: 40px;">
+    </a>
+  </div>
+</div>
+
+       
+<div id="historia" class="content">
+   
+  <h2>Nuestra Historia</h2>
+   <p><strong>INICIADO EN NOVIEMBRE DE 2023</strong></p>
+
+  <p>Esta revista nació de una experiencia transformadora durante una salida pedagógica de la <strong>Universidad del Tolima</strong> al <strong>Museo El Rayo</strong>, guiados por la catedrática <strong>Vanessa López</strong>. Allí, un taller de grabado (intaglio) despertó aún más mi pasión por el arte y la cultura de Colombia.</p>
+
+  <p>Como parte de ese proyecto, junto con la catedrática <strong>Claudia Rengifo</strong>, surgió el desafío de crear esta revista, que busca compartir la riqueza y espectacularidad de nuestros museos nacionales.</p>
+
+  <p>Quiero transmitir que el arte y la cultura son accesibles para todos, ya que muchos museos en Colombia son gratuitos o tienen costos muy asequibles.</p>
+
+  <p><strong>Soy Yobana Orozco Benavides</strong> y esta revista es una ventana para explorar y valorar el patrimonio artístico de nuestro país. Más que un proyecto universitario, es el inicio de una apasionante aventura cultural.</p>
+
+  <!-- Imagen portada de la primera revista -->
+  <div style="text-align: center; margin-top: 30px;">
+    <img src="https://i.postimg.cc/MTTnhbwc/REVISTA-EXPLORANDO-MUSEOS-NACIONALES-DE-COLOMBIA-CON-YOBANA-OROZCO-BENAVIDES-EDICI-N-1-MUSEO-RAYO-T.jpg"
+         alt="Portada de la Primera Edición Revista - Ilustrada"
+         style="max-width: 100%; border-radius: 12px; box-shadow: 0 0 20px #ffffff44;">
+   <p style="font-size: 14px; color: #cccccc; margin-top: 10px;">
+  <em>Orozco Benavides, Y. (2023, noviembre). <i>Portada ilustrada primera edición: Museo El Rayo</i> [Ilustración]. Revista <i>Explorando los museos nacionales de Colombia</i>. https://explorandomuseosnacionalesdecolombia.weebly.com/</em>
+</p>
+
     </div>
-    <div class="accordion-content" id="politica-arte">
-      <h3>1. Identidad de la revista</h3>
-      <p>Publicación digital de acceso abierto enfocada en la difusión de arte y cultura latinoamericana. Se reconocen artistas invitados y museos destacados con entrevistas y ediciones especiales.</p>
+       <p>ACTUALIZACIÓN – 27 DE JUNIO DE 2025</p>
+ 
+  <p>Hoy damos un paso más allá, abriendo una nueva etapa con el lanzamiento de la revista <strong>Explorando Museos y Arte Latinoamericano</strong>, ampliando nuestra mirada hacia todo el continente.</p>
 
-      <h3>2. Política de Acceso Abierto</h3>
-      <p>Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican en el sitio web oficial y en plataformas académicas y culturales para mayor visibilidad.</p>
+  <p>Con esta expansión, abrimos una convocatoria oficial para publicar nuestra primera edición latinoamericana, en la cual podrán participar artistas visuales, escritores, fotógrafos, ilustradores y creadores de toda América Latina.</p>
 
-      <h3>3. Participación de Autores</h3>
-      <ul>
-        <li>Certificado digital de participación para todos los autores.</li>
-        <li>Entrega de revista en PDF.</li>
-        <li>Formulario de autoría obligatorio.</li>
-        <li>Derechos de autor conservados por los autores.</li>
-        <li>Obras inéditas, originales y con fines educativos y culturales.</li>
-      </ul>
+  <p>Los seleccionados harán parte de esta primera edición, visibilizando sus obras en una publicación digital gratuita y multicultural.</p>
 
-      <h3>4. Licenciamiento</h3>
-      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+  <p><strong>Este cambio también marca el nacimiento de nuestra nueva identidad como plataforma:</strong> dejamos de ser únicamente <em>Explorando Museos Nacionales de Colombia</em> para convertirnos en <strong>Explorando Museos y Arte Latinoamericano</strong>, una propuesta incluyente y colectiva al servicio del arte latino.</p>
 
-      <h3>5. Convocatorias y Eventos Especiales</h3>
-      <ul>
-        <li>Convocatorias abiertas con instrucciones claras, formularios y cronogramas.</li>
-        <li>Posibilidad de artistas invitados especiales y museos participantes con entrevistas y ediciones curatoriales.</li>
-      </ul>
+  <p>Con este nuevo enfoque, nuestra plataforma podrá alojar <strong>dos revistas independientes</strong>: una dedicada a los <strong>Museos Nacionales de Colombia</strong> y otra enfocada en el <strong>Arte Latinoamericano</strong>, permitiendo así una mayor diversidad de contenidos, voces y expresiones artísticas.</p>
 
-      <h3>6. Tipos de Contenidos</h3>
-      <ul>
-        <li>Artes visuales: pintura, dibujo, escultura, murales, fotografía, collage, arte digital y mixto.</li>
-        <li>Literatura: poesía, cuentos, relatos breves, artículos, ensayos, fragmentos y textos críticos.</li>
-        <li>Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.</li>
-      </ul>
+  <p>Además, encontrarás <strong>podcasts</strong>, <strong>cuentos digitales multimedia</strong>, <strong>juegos interactivos</strong> y otros recursos diseñados especialmente para promover la <strong>educación artística y cultural</strong> de forma innovadora y accesible para todos.</p>
+   <strong>Importante:</strong> Este proyecto es completamente <strong>sin ánimo de lucro</strong> y está gestionado por la <strong>Fundación Artes Multicap</strong> con el propósito de democratizar el acceso al arte y la cultura en América Latina.
+ 
+  <p>Creemos firmemente que el arte es una herramienta poderosa para la educación, la transformación social y el reconocimiento de nuestra historia cultural.</p>
+    
 
-      <h3>7. Ética Editorial</h3>
-      <p>Prohibido el plagio. Se respeta la diversidad cultural, la autoría y la integridad de las obras.</p>
+  <!-- Imagen del flyer de convocatoria -->
+  <div style="text-align: center; margin-top: 30px;">
+    <img src="https://i.postimg.cc/yN3q5MZw/convocatoria-2025-1.png"
+         alt="Flyer convocatoria apertura 2025"
+         style="max-width: 80%; border-radius: 12px; box-shadow: 0 0 20px #ffffff44;">
+    <p style="font-size: 14px; color: #cccccc; margin-top: 10px;">
+  <em>Orozco Benavides, Y. (2025, junio 27). <i>Convocatoria abierta: ¡participa en la nueva etapa latinoamericana!</i> [Flayer publicitario]. Sitio web de la revista <i>Explorando Museos y Arte Latinoamericano</i>. https://explorandomuseosyartelatinoamericano.netlify.app/</em>
+</p>
 
-      <h3>8. Comité Editorial</h3>
-      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+  </div>
+  <p><strong>ACTUALIZACIÓN – 5 DE JULIO DE 2025</strong></p>
+
+<p>Hoy nace una nueva idea dentro de nuestro proyecto: una <strong>convocatoria especial para niños y jóvenes de 8 a 17 años</strong> de toda América Latina.</p>
+
+<p>Queremos brindarles la alegría de compartir sus obras con otros niños y jóvenes creadores del continente, permitiéndoles conocer artistas como ellos y descubrir que el arte también es una forma de conectar, aprender y expresar quiénes somos.</p>
+
+<p>Creemos que muchos niños nacen con un talento artístico innato, pero al crecer, ese talento muchas veces se pierde por falta de espacios donde pueda ser valorado y cultivado. Esta iniciativa busca precisamente lo contrario: <strong>aprovechar esta etapa mágica de la infancia y adolescencia donde el arte fluye con autenticidad, emoción y libertad</strong>.</p>
+
+<p>Sabemos también que esta propuesta tiene un valor inmenso en el <strong>bienestar emocional de nuestros niños y jóvenes</strong>. El arte les permite explorar su mundo interior, expresar lo que sienten, fortalecer su autoestima y construir identidad. Participar en una revista donde son escuchados y valorados les ayuda a sentirse reconocidos, importantes y capaces.</p>
+
+<p>Soñamos con que cada niño y joven participante <strong>se vea reflejado como artista y ser humano</strong>, en una comunidad creativa que los abraza y les dice: "lo que haces importa".</p>
+
+<p>Esta convocatoria es también un llamado a padres, madres, docentes y cuidadores para que se sumen como aliados, sabiendo que <strong>cuando un adulto cree en el arte de un niño, está nutriendo su mundo emocional, su creatividad y su confianza</strong>.</p>
+  
+  <!-- Flyer anuncio próxima convocatoria infantil -->
+<div style="margin-top: 40px; text-align: center;">
+  <p style="font-size: 16px; font-weight: bold; color: #ffffff; text-shadow: 0 0 10px #ffffff99;">
+    🎨 Muy pronto lanzaremos esta convocatoria para niños y jóvenes de América Latina
+  </p>
+  <img src="https://i.postimg.cc/hjXC1tsH/Whats-App-Image-2025-06-27-at-9-1-2.png" 
+       alt="Convocatoria niños y jóvenes Latinoamérica"
+       style="max-width: 80%; border-radius: 12px; box-shadow: 0 0 20px #ffffff44; margin-top: 15px;">
+  <p style="font-size: 13px; color: #999999; margin-top: 30px;">
+    <em>Orozco Benavides, Y. (2025, julio 5). <i>Muy pronto: Revista Jóvenes Creadores de Latinoamérica</i> [Flayer informativo]. Sitio web oficial Explorando Museos y Arte Latinoamericano. https://explorandomuseosyartelatinoamericano.netlify.app/</em>
+  </p>
+</div>
+</div>
+
+
+  </div>
+</div>
+  
+<div id="convocatoria" class="content" style="font-family: 'Arial', sans-serif; line-height: 1.4; max-width: 950px; margin: auto; padding: 30px; color: #ffffff; background-color: transparent;">
+
+ <!-- Botón principal que despliega las convocatorias -->
+<h2 style="text-align: center; cursor: pointer; color: #ffffff; background-color: #000; padding: 12px 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff; transition: background 0.3s ease;" 
+    onclick="toggleConvocatorias()">Convocatorias 2025 🔽</h2>
+  
+  
+  
+  
+
+<!-- Contenedor oculto con los botones de convocatoria 1 y 2 -->
+<div id="contenedorConvocatorias" style="display: none; margin-top: 30px; text-align: center; animation: fadeIn 0.5s ease-in-out;">
+
+ <!-- BOTÓN CONVOCATORIA 1 COMO IMAGEN (con enlace externo) -->
+<div style="text-align: center; margin: 30px 0;">
+  <a href="https://convocatoria1arteculturalatina2025.netlify.app/" target="_blank">
+    <img src="https://i.postimg.cc/3wqj0TPL/Whats-App-Image-2025-06-27-at-9-2.png" 
+         alt="Botón Convocatoria 1"
+         class="imagen-boton"
+         style="cursor: pointer; max-width: 30%; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" />
+  </a>
+</div>
+
+
+  <!-- BOTÓN CONVOCATORIA 2 COMO IMAGEN CON ENLACE -->
+<div style="text-align: center; margin: 30px 0;">
+  <a href="https://convocatoriajuvenil2025.netlify.app/" target="_blank">
+    <img src="https://i.postimg.cc/QX2mL8fN/JHGF.png" 
+         alt="Botón Convocatoria 2"
+         class="imagen-boton"
+         style="cursor: pointer; max-width: 30%; border-radius: 12px; box-shadow: 0 0 15px rgba(255,255,255,0.3); transition: transform 0.3s ease, box-shadow 0 0 25px rgba(255, 255, 255, 0.9);" />
+  </a>
+</div>
+  
+  
+
+
+<!-- SCRIPT para desplegar los botones -->
+<script>
+function toggleConvocatorias() {
+  const contenedor = document.getElementById('contenedorConvocatorias');
+  if (contenedor.style.display === 'none') {
+    contenedor.style.display = 'block';
+    contenedor.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    contenedor.style.display = 'none';
+  }
+}
+</script>
+
+</div> <!-- FIN contenedorConvocatorias 2025 -->
+
+<!-- ================================================= -->
+<!-- ============ CONVOCATORIAS 2026 ================= -->
+<!-- ================================================= -->
+
+<h2 style="text-align: center; cursor: pointer; color: #ffffff; background-color: #000; padding: 12px 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff; transition: background 0.3s ease; margin-top:40px;" 
+    onclick="toggleConvocatorias2026()">
+  Convocatorias 2026 🔽
+</h2>
+
+<div id="contenedorConvocatorias2026" style="display:none; margin-top:30px; text-align:center; animation: fadeIn 0.5s ease-in-out;">
+
+  <div style="margin:30px 0;">
+    <a href="https://convocatoria-n-2-voces-que-habitan-el.netlify.app/" target="_blank">
+      <img 
+        src="https://i.postimg.cc/d1Y7ffmF/Chat-GPT-Image-8-ene-2026-11-18-29-a-m-YYTR.jpg"
+        alt="Convocatoria 2026 - Voces que Habitan el Territorio"
+        style="cursor:pointer; max-width:30%; border-radius:12px; box-shadow:0 0 15px rgba(255,255,255,0.3); transition:transform 0.3s ease;"
+      >
+    </a>
+  </div>
+
+</div>
+
+<script>
+function toggleConvocatorias2026() {
+  const cont = document.getElementById("contenedorConvocatorias2026");
+  cont.style.display = cont.style.display === "none" ? "block" : "none";
+}
+</script>
+
+ 
+<!-- ESTILOS -->
+<style>
+  .titulo-seccion {
+    background-color: #000;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px #ffffffaa;
+    display: inline-block;
+    margin: 25px 0 15px;
+  }
+
+  .tabla-cronograma {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 0 20px #ffffff33;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .tabla-cronograma th, .tabla-cronograma td {
+    padding: 12px;
+    border: 1px solid #555;
+    background-color: #111;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .tabla-cronograma thead th {
+    background-color: #ffffff11;
+    font-weight: bold;
+    text-shadow: none;
+    letter-spacing: 1px;
+  }
+
+  .boton-elegante {
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 0 12px #ffffffaa;
+    margin: 10px;
+  }
+
+  .boton-elegante:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+    box-shadow: 0 0 20px #ffffff;
+  }
+</style>
+
+
+
+  <!-- CONTENIDO CONVOCATORIA 2 -->
+  <div id="convocatoria2" class="seccion-convocatoria" style="display: none; margin-top: 30px;">
+    <img src="https://i.postimg.cc/hjXC1tsH/Whats-App-Image-2025-06-27-at-9-1-2.png" alt="Convocatoria 2" class="imagen-boton" style="display:block; margin:auto;" />
+    <p style="text-align: center; margin-top: 15px;"><strong>Convocatoria N.º 1 | Próximamente</strong></p>
+    <hr style="margin: 20px 0; border-color: #555;">
+    <p style="text-align: center;"><em>Estamos trabajando en la próxima convocatoria. Muy pronto compartiremos toda la información.</em></p>
+  </div>
+</div>
+
+
+<style>
+  .imagen-boton {
+    cursor: pointer;
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .imagen-boton:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255,255,255,0.9);
+  }
+
+  .boton-elegante {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(255,255,255,0.2);
+    margin: 10px;
+  }
+
+  .boton-elegante:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 12px #ffffff;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+
+<script>
+  function mostrarContenido(id) {
+    const secciones = document.querySelectorAll('.seccion-convocatoria');
+    secciones.forEach(sec => {
+      sec.style.display = (sec.id === id) ? 'block' : 'none';
+    });
+  }
+</script>
+
+
+<style>
+  .boton-elegante {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(255,255,255,0.2);
+  }
+
+ .boton-elegante:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    box-shadow: 0 0 20px #ffffff;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+
+<script>
+  function mostrarContenido(id) {
+    const seccion = document.getElementById(id);
+    const visible = seccion.style.display === 'block';
+    document.querySelectorAll('.seccion-convocatoria').forEach(sec => sec.style.display = 'none');
+    seccion.style.display = visible ? 'none' : 'block';
+  }
+</script>
+ 
+
+</div>
+
+<script>
+  function mostrarDonaciones() {
+    var info = document.getElementById("donaciones-info");
+    info.style.display = (info.style.display === "none") ? "block" : "none";
+  }
+
+</div>
+
+<script>
+  function mostrarDonaciones() {
+    var info = document.getElementById('donaciones-info');
+    info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+  }
+</script>
+
+  </div>
+
+  <script>
+    function toggleContent(id) {
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(c => {
+        c.style.display = c.id === id ? 'block' : 'none';
+      });
+    }
+    window.onload = () => toggleContent('inicio');
+  </script>
+
+</div>
+</div>
+
+  <div id="revistas" class="content">
+<h2> Revista Explorando Museos Nacionales de Colombia</h2>
+      <h2>ISSN:3114-9243</h2>
+        <p><strong>Periodicidad:</strong> Cuatrimestral.</p>
+    <p>
+Es una publicación digital de acceso abierto que difunde contenidos artísticos, educativos y culturales sobre el patrimonio museal colombiano, basados en investigación en campo, observación directa y verificación editorial. El proyecto es independiente y cuenta con el respaldo y la gestión de la Fundación Artes Multicap.
+</p>
+
+
+    <p><strong>Público:</strong><br>
+    Docentes, investigadores, estudiantes, artistas, gestores culturales y profesionales de las áreas de arte, educación, cultura, museología y humanidades, así como a públicos interesados en la reflexión y divulgación del patrimonio cultural y museal colombiano.
+    </p>
+    <p><strong>Comité editorial principal:</strong><br>
+    Yobana Orozco Benavides – Editora y coordinadora editorial.
+    </p>
+    <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify; font-size:14px;">
+    <strong>Licencia:</strong> Los contenidos de esta revista se publican bajo la 
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank" style="color:#d4af37; text-decoration:none;">
+      Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0)
+    </a>. 
+    Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.
+  </p>
+
+
+
+    
+   <style>
+.revistas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.revista-item iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid lightgray;
+}
+
+.revista-item .doi {
+  text-align: center;
+  margin-top: 15px;
+}
+</style>
+
+<div class="revistas-grid">
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/44e3e6e4a4.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.17642300">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17642300.svg" alt="DOI">
+      </a>
     </div>
   </div>
 
-  <!-- REVISTA MUSEOS NACIONALES -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion('politica-museos')">
-      <div class="accordion-logo">
-        <img src="https://i.postimg.cc/KvGnsFtB/Whats-App-Image-2025-06-27-at-9-00-51-AM.jpg" alt="Logo Museos Nacionales">
-      </div>
-      <div class="texto-titulo">
-        <h2>Revista Explorando Museos Nacionales de Colombia</h2>
-        <span>ISSN 3114-9243 · Periodicidad Cuatrimestral</span>
-      </div>
-    </div>
-    <div class="accordion-content" id="politica-museos">
-      <h3>1. Identidad de la revista</h3>
-      <p>Revista digital enfocada en museos, patrimonio y cultura colombiana. Contenidos con base en visitas, entrevistas y documentación institucional.</p>
-
-      <h3>2. Política de Acceso Abierto</h3>
-      <p>Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.</p>
-
-      <h3>3. Participación de Autores e Instituciones</h3>
-      <ul>
-        <li>Autores y museos conservan derechos de autor.</li>
-        <li>Certificados de participación para colaboradores y autores.</li>
-        <li>Autorización institucional para museos requerida.</li>
-        <li>Difusión con fines educativos y culturales, no comerciales.</li>
-      </ul>
-
-      <h3>4. Licenciamiento</h3>
-      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
-
-      <h3>5. Convocatorias y Eventos Especiales</h3>
-      <ul>
-        <li>Visitas y entrevistas a museos y colecciones institucionales.</li>
-        <li>Ediciones especiales para museos invitados y artistas destacados.</li>
-      </ul>
-
-      <h3>6. Tipos de Contenidos</h3>
-      <ul>
-        <li>Artículos sobre museos, patrimonio y colecciones.</li>
-        <li>Ensayos educativos y reflexiones curatoriales.</li>
-        <li>Proyectos culturales y pedagógicos.</li>
-      </ul>
-
-      <h3>7. Comité Editorial</h3>
-      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/d4848b5663.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809514">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809514.svg" alt="DOI">
+      </a>
     </div>
   </div>
 
-  <!-- REVISTA JÓVENES CREADORES -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion('politica-jovenes')">
-      <div class="accordion-logo">
-        <img src="https://i.postimg.cc/6qnBHMPr/Whats-App-Image-2025-06-27-at-9-(1)-(1).png" alt="Logo Jóvenes Creadores">
-      </div>
-      <div class="texto-titulo">
-        <h2>Revistas Jóvenes Creadores de Latinoamérica (Internacional)</h2>
-        <span>ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años</span>
-      </div>
-    </div>
-    <div class="accordion-content" id="politica-jovenes">
-      <h3>1. Identidad de la revista</h3>
-      <p>Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multica.</p>
-
-      <h3>2. Política de Acceso Abierto</h3>
-      <p>Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.</p>
-
-      <h3>3. Participación de Autores y Menores</h3>
-      <ul>
-        <li>Certificado digital de participación emitido por la Fundación Artes Multicap.</li>
-        <li>Autorización de padres o tutores obligatoria para menores de edad.</li>
-        <li>Formulario de autoría obligatorio.</li>
-        <li>Derechos de autor conservados por los menores y respetados.</li>
-        <li>Reconocimiento de acompañantes: docentes, familias y organizaciones.</li>
-      </ul>
-
-      <h3>4. Licenciamiento</h3>
-      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
-
-      <h3>5. Convocatorias y Eventos Especiales</h3>
-      <ul>
-        <li>Convocatorias con instrucciones, cronogramas y formularios.</li>
-        <li>Publicación de obras seleccionadas en la revista y en plataformas digitales.</li>
-        <li>Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.</li>
-        <li>Constancias digitales y menciones especiales para quienes orienten y acompañen los procesos creativos.</li>
-        <li>Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.</li>
-      </ul>
-
-      <h3>6. Tipos de Contenidos</h3>
-      <ul>
-        <li>Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.</li>
-        <li>Literatura: poesía, cuento, relato breve, artículo, ensayo.</li>
-        <li>Proyectos culturales, creativos y reflexiones pedagógicas.</li>
-      </ul>
-
-      <h3>7. Ética Editorial</h3>
-      <p>Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.</p>
-
-      <h3>8. Comité Editorial</h3>
-      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/9606141ad9.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809438">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809438.svg" alt="DOI">
+      </a>
     </div>
   </div>
 
- <footer style="
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px 30px;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Times New Roman', serif;
-  font-size: 16px;
-">
-
-  <!-- Imagen / Logo a la izquierda -->
-  <img 
-    src="https://i.postimg.cc/jjZ7mqJB/480702220-618041787505911-8280549859336367380-n.jpg"
-    alt="Fundación Artes Multicap"
-    style="
-      width: 120px;
-      height: auto;
-      max-width: 100%;
-    "
-  >
-
-  <!-- Texto del footer -->
-  <div style="text-align: left; line-height: 1.5;">
-    © Fundación Artes Multicap<br>
-    Proyectos editoriales artísticos, culturales y educativos
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/e6000cee15.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809570">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809570.svg" alt="DOI">
+      </a>
+    </div>
   </div>
 
-</footer>
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/390c4f40ca.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809590">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809590.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
+  <div class="revista-item">
+    <iframe src="https://heyzine.com/flip-book/956f34b8e9.html"
+      allowfullscreen allow="clipboard-write" scrolling="no" class="fp-iframe"></iframe>
+    <div class="doi">
+      <a href="https://doi.org/10.5281/zenodo.16809602">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16809602.svg" alt="DOI">
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+    
+  </div>
+  
+<div id="revistas Latinoamericanas" class="content">
+    <h2 style="text-align: left; margin-bottom: 8px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
+  Revista Explorando Arte y Cultura de Latinoamérica
+</h2>
+<p style="text-align: left; margin: 0; font-size: 18px; font-style: italic; color: #ffffff; font-family: 'Times New Roman', serif;">
+  Arte Sin Fronteras – Ediciones Internacionales de Artistas Mayores de Edad
+</p>
+<h2 style="text-align: left; margin-top: 4px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
+  ISSN (digital): 3114-9871
+</h2>
+
+  <p style="text-align:left; margin-top:6px; font-size:18px; color:#ffffff; font-family:'Times New Roman', serif;">
+    <strong>Periodicidad:</strong> Semestral
+  </p>
+
+ 
+
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify;">
+    Es una publicación digital de acceso abierto orientada a la difusión, análisis y visibilización de prácticas artísticas y expresiones culturales contemporáneas vinculadas al contexto latinoamericano.
+  </p>
+
+ 
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify;">
+La línea editorial es cultural y artístico-educativa, basada en procesos de curaduría, análisis contextual y verificación de contenidos. La revista acoge aportes de autores latinoamericanos y creadores internacionales cuyas obras dialogan con las realidades y expresiones culturales de América Latina, promoviendo la circulación de conocimiento y el intercambio cultural.
+  </p>
+
+
+   <p><strong>Público:</strong><br>
+Artistas, docentes, investigadores, estudiantes, gestores culturales y profesionales de las áreas de arte, cultura, educación y humanidades, así como públicos interesados en el estudio, la creación y la difusión del arte y la cultura latinoamericana.
+    </p>
+    <p><strong>Comité editorial principal:</strong><br>
+    Yobana Orozco Benavides – Editora y coordinadora editorial.
+    </p>
+
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify;">
+    Proyecto editorial independiente respaldado y gestionado por la <strong>Fundación Artes Multicap</strong>.
+  </p>
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify; font-size:14px;">
+    <strong>Licencia:</strong> Los contenidos de esta revista se publican bajo la 
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank" style="color:#d4af37; text-decoration:none;">
+      Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0)
+    </a>. 
+    Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.
+  </p>
+   
+<iframe 
+  src="https://heyzine.com/flip-book/531e2dd77c.html" 
+  allowfullscreen="allowfullscreen" 
+  allow="clipboard-write" 
+  scrolling="no" 
+  class="fp-iframe" 
+  style="border: 1px solid lightgray; width: 100%; height: 400px;">
+</iframe>
+
+
+   
+    <!-- ENLACE DEL DOI (blanco, centrado, limpio) -->
+<div style="text-align: center; margin-top: 15px;">
+  <a href="https://doi.org/10.5281/zenodo.17065271" target="_blank" rel="noopener">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17065271.svg" alt="DOI">
+  </a>
+</div>
 
 
 </div>
 
-</body>
-</html>
+
+<div id="revistas Jóvenes Creadores" class="content">
+ 
+    <h2 style="text-align: left; margin-bottom: 8px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Revistas Jóvenes Creadores de Latinoamérica (Internacional)
+  </h2>
+
+  <p style="text-align: left; margin: 0; font-size: 18px; font-style: italic; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Semillas del Arte y la Cultura Latinoamericana – Jóvenes Talentos (8 a 17 años)
+  </p>
+
+  <h2 style="text-align: left; margin-top: 4px; font-size: 26px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">
+    ISSN (digital): 3115-0357
+  </h2>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Periodicidad: Semestral
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Es una publicación digital de acceso abierto dedicada a la difusión y visibilización de procesos creativos, expresiones artísticas y manifestaciones culturales desarrolladas por niños, niñas y jóvenes de América Latina, entre los 8 y 17 años, en contextos educativos, formativos y culturales.
+  </p>
+
+  
+    <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+La revista tiene un enfoque editorial artístico-educativo, basado en procesos de curaduría editorial, acompañamiento pedagógico, verificación responsable de contenidos y fortalecimiento de la investigación formativa. Reconoce la creación artística y la escritura como herramientas de exploración y construcción de conocimiento desde edades tempranas, y promueve la participación de instituciones educativas, docentes, formadores y familias a nivel nacional e internacional, contribuyendo al desarrollo creativo, investigativo y emocional de niños y jóvenes, así como al fortalecimiento de valores de respeto, autonomía, identidad y reconocimiento del otro.
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Público: niños, niñas y jóvenes creadores; docentes, formadores, instituciones educativas, gestores culturales y públicos interesados en el arte, la educación y la cultura latinoamericana con enfoque formativo.
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Comité editorial principal: <strong>Yobana Orozco Benavides</strong>, editora y coordinadora editorial.
+  </p>
+
+  <p style="text-align: left; font-size: 16px; color: #ffffff; font-family: 'Times New Roman', serif;">
+    Proyecto editorial independiente respaldado y gestionado por la <strong>Fundación Artes Multicap</strong>.
+  </p>
+  <p style="color:#ffffff; font-family:'Times New Roman', serif; text-align:justify; font-size:14px;">
+    <strong>Licencia:</strong> Los contenidos de esta revista se publican bajo la 
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank" style="color:#d4af37; text-decoration:none;">
+      Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0)
+    </a>. 
+    Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.
+  </p>
+  
+
+  <!-- Flipbook incrustado actualizado -->
+  <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
+    <iframe 
+      allowfullscreen="allowfullscreen" 
+      allow="clipboard-write" 
+      scrolling="no" 
+      class="fp-iframe" 
+      src="https://heyzine.com/flip-book/171510b58c.html" 
+      style="border: 1px solid lightgray; width: 100%; height: 400px; border-radius: 10px; box-shadow: 0 0 15px #ffffff55;">
+    </iframe>
+  </div>
+
+
+</div>
+  
+  
+
+<div id="obrasAnimadas" class="content">
+  <h2>Obras Animadas</h2>
+  
+  <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/ZK7DG5HGSmY?si=mTLVwNQ_K8ooxJj7"
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+  </iframe>
+</div>
+
+
+  <div id="cuentos" class="content">
+    <h2>Cuento Animado</h2>
+   <!-- Contenedor centrado -->
+<div style="display: flex; justify-content: center; margin-top: 1.6em; margin-bottom: 0.9em;">
+  <!-- Canva Embed más pequeño -->
+  <div style="position: relative; width: 50%; height: 0; padding-top: 50%; 
+              box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); 
+              overflow: hidden; border-radius: 8px; will-change: transform;">
+    <iframe 
+      loading="lazy" 
+      style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+      src="https://www.canva.com/design/DAGQLrPvAeo/zEBrIiOXcI6TXIlguyCAsQ/view?embed" 
+      allowfullscreen="allowfullscreen" 
+      allow="fullscreen">
+    </iframe>
+  </div>
+</div>
+
+
+<!-- Enlace a Canva por si quieren abrir en otra pestaña -->
+<a href="https://www.canva.com/design/DAGQLrPvAeo/zEBrIiOXcI6TXIlguyCAsQ/view?utm_content=DAGQLrPvAeo&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
+   target="_blank" 
+   rel="noopener">
+  MARCOS Y LOS CACHORROS E LA CUMBRE de YOBANA OROZCO
+</a>
+
+  </div>
+
+ <div id="podcast" class="content">
+  <h2>Podcast</h2>
+
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+    <!-- Spotify -->
+    <div style="flex: 1 1 300px; max-width: 350px; text-align: center;">
+      <p><strong>🎧 Escuchar en Spotify</strong></p>
+      <iframe 
+        data-testid="embed-iframe" 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/episode/5S8GBYtHjronCw0yWdV1IO?utm_source=generator&theme=0" 
+        width="100%" 
+        height="200" 
+        frameborder="0" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- YouTube -->
+    <div style="flex: 1 1 300px; max-width: 350px; text-align: center;">
+      <p><strong>📺 Ver en YouTube</strong></p>
+      <iframe 
+        width="100%" 
+        height="200" 
+        src="https://www.youtube.com/embed/v4E8rj9nErk?si=un_2J4PdIe93CDGg" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+     <div style="flex: 1 1 300px; max-width: 350px; text-align: center;">
+      <p><strong>📺 Ver en YouTube</strong></p>
+      <iframe 
+        width="100%" 
+        height="200" 
+        src="https://www.youtube.com/embed/1ASLLd-2b8c?si=wHBzQIYp5Qzwmawj" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>   
+    
+  </div>
+</div>
+
+
+
+  <div id="juegos" class="content">
+    
+    <!-- Primer iframe del juego principal -->
+<iframe src="https://juegosmuseosnacionalescolombia.netlify.app/" 
+        allowfullscreen 
+        style="width: 100%; height: 1000px; border: none;">
+</iframe>
+
+<!-- Botones de juegos adicionales -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+  
+  <!-- Juego 1 -->
+  <a href="https://juegoemocionesenelaulayobanaorozcob.netlify.app/" target="_blank">
+    <img src="https://i.postimg.cc/Dn3Cb6TY/418b1c0f-8d2a-463f-9cb1-271bd0abfd0e-1.png" 
+         alt="Juego Emociones" 
+         style="width: 180px; border-radius: 12px; transition: transform 0.2s;"
+         onmouseover="this.style.transform='scale(1.05)'"
+         onmouseout="this.style.transform='scale(1)'"/>
+  </a>
+
+  <!-- Juego 2 -->
+  <a href="https://arteconretosabc.netlify.app/" target="_blank">
+    <img src="https://i.postimg.cc/KmJQwygd/a83b4e63-399d-4f57-8c16-772b47efc13e-3.png" 
+         alt="Arte con Retos" 
+         style="width: 180px; border-radius: 12px; transition: transform 0.2s;"
+         onmouseover="this.style.transform='scale(1.05)'"
+         onmouseout="this.style.transform='scale(1)'"/>
+  </a>
+
+  <!-- Juego 3 -->
+  <a href="https://neophotostudio.netlify.app/" target="_blank">
+    <img src="https://i.postimg.cc/c07F7311/a83b4e63-399d-4f57-8c16-772b47efc13e-1.png" 
+         alt="Neo Photo Studio" 
+         style="width: 180px; border-radius: 12px; transition: transform 0.2s;"
+         onmouseover="this.style.transform='scale(1.05)'"
+         onmouseout="this.style.transform='scale(1)'"/>
+  </a>
+
+  <!-- Juego 4 -->
+  <a href="https://recigoeducativo.netlify.app/" target="_blank">
+    <img src="https://i.postimg.cc/x90t6dqv/a83b4e63-399d-4f57-8c16-772b47efc13e-2.png" 
+         alt="Recigo Educativo" 
+         style="width: 180px; border-radius: 12px; transition: transform 0.2s;"
+         onmouseover="this.style.transform='scale(1.05)'"        onmouseout="this.style.transform='scale(1)'"/>
+    </a>
+  </div>
+</div>
+
+ <div id="servicios" class="content">
+  <h2>Servicios</h2>
+  <ul>
+    <li>Revistas digitales interactivas sobre museos, arte, cultura y literatura latinoamericana</li>
+    <li>Convocatorias abiertas para artistas latinoamericanos</li>
+    <li>Publicación de obras visuales, textos literarios y proyectos culturales</li>
+    <li>Acompañamiento editorial y difusión digital de los artistas seleccionados</li>
+    <li>Cuentos animados y narrados para público infantil y juvenil</li>
+    <li>Juegos educativos con enfoque cultural y pedagógico</li>
+    <li>Podcast culturales con invitados de toda América Latina</li>
+    <li>Diseño de contenidos transmedia y experiencias interactivas</li>
+  </ul>
+</div>
+
+
+  <div id="contacto" class="content">
+    <h2>Contacto</h2>
+    <p>explorandomuseosnacionalesdecolo@yahoo.com</p>
+    <p>artesmulticap2024@gmail.com</p>
+   <p>
+     <p>Whatsapp: +57 3113555949</p>
+   <p>
+  <a href="https://yobanaorozcoartista.bio.link" target="_blank" rel="noopener noreferrer">
+    yobanaorozcoartista.bio.link
+  </a>
+</p>
+
+    <p>Cali - Colombia</p>
+  </div>
+
+<div id="autores" class="content">
+
+  <!-- Artistas colaboradores -->
+  <h2 style="color: white; text-align: center;">Artistas Colaboradores</h2>
+  <div style="text-align: center; margin-top: 20px;">
+    <button onclick="toggleColaboradores()" id="btnColaboradores">
+      Ver lista de artistas colaboradores de la Revista <br> 
+      <em>Rostros y Raíces de América Latina</em> Vol. 1, N°1 (Septiembre 2025)
+    </button>
+
+    <div id="colaboradores" style="display: none; margin-top: 20px; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; background: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33; color: white;">
+      <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
+        <li>🇲🇽 <strong>Ricardo Hernández Cruz</strong> (México, Villahermosa – Tabasco)</li>
+        <li>🇨🇴 <strong>Sloth</strong> (Colombia, Bogotá)</li>
+        <li>🇨🇴 <strong>Leidy Yobana Niño Barón</strong> (Colombia, Guacamayas – Boyacá)</li>
+        <li>🇨🇴 <strong>Edwin López Fajardo</strong> (Colombia, Garzón – Huila)</li>
+        <li>🇨🇴 <strong>Nenfis Perilla</strong> (Colombia, Garzón – Huila)</li>
+        <li>🇪🇨 <strong>Fernando Freire Manzano – Kolibry</strong> (Ecuador, Guayaquil)</li>
+        <li>🇳🇮 <strong>Luisa Amanda Solano Mendoza</strong> (Nicaragua, Corinto / Italia)</li>
+        <li>🇨🇴 <strong>Yobana Orozco Benavides</strong> (Colombia, Cali – Valle del Cauca)</li>
+        <li>🏛️ <strong>Museo Itinerante del Patrimonio</strong> (Ecuador, fundadores: Fernando Freire Manzano y Renée Paredes González)</li>
+      </ul>
+    </div>
+
+    <!-- Nuevo botón: Jóvenes Artistas -->
+    <button onclick="toggleJovenes()" id="btnJovenes" style="margin-top: 20px;">
+      Ver lista de jóvenes artistas colaboradores de la Revista <br>
+      <em>Explosión Creativa en América Latina</em> Vol. 1, N°1 (Octubre 2025)
+    </button>
+
+    <div id="jovenes" style="display: none; margin-top: 20px; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; background: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33; color: white;">
+      <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
+        <li><strong>Jóvenes Artistas Participantes – Artes Plásticas y Visuales</strong></li>
+        <li>María Camila Tuquerres Ruiz</li>
+        <li>Luciana Ortega López</li>
+        <li>David Rosero Orozco</li>
+        <li>Luis Eduardo Moreno</li>
+        <li>Ashly Muñoz</li>
+        <li>María Camila Higuita</li>
+        <li>Daniel Alexander Ortiz Orozco</li>
+        <li>Valeria Castillo Pinto</li>
+        <br>
+        <li><strong>Artistas Participantes – Literatura</strong></li>
+        <li>Valeria Ramírez Berrío</li>
+        <br>
+        <li><strong>Artistas Participantes – Fotografía</strong></li>
+        <li>Diego Andrés Montenegro Villar</li>
+        <br>
+        <li><strong>Instituciones educativas aliadas</strong></li>
+<li>Centro Educativo Sebastián De Belalcázar</li>
+<li>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0jBM6u9VrHlJubeMAW8Dwo9kSvFDwdGXB2A&s" 
+       alt="Logo Centro Educativo Sebastián De Belalcázar" 
+       style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 0 10px #ffffff55;" />
+</li>
+
+
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Autora del sitio -->
+  <h2 style="color: white; text-align: center; margin-top: 50px;">Autora</h2>
+  <div class="authors-container" style="display: flex; flex-direction: column; align-items: center;">
+    <div class="author" style="text-align: center; color: white;">
+      <!-- Imagen de la autora -->
+      <img src="https://cdn.bio.link/uploads/profile_pictures/2023-03-26/pbuGkT1rciKvlmNEv8Oyz5aZnwnFY8wR.png" 
+           alt="Yobana Orozco Benavides" 
+           style="width: 150px; height: auto; border-radius: 50%; box-shadow: 0 0 20px #ffffff88; margin-bottom: 1rem;" />
+
+      <h3 style="margin: 10px 0;">Yobana Orozco Benavides</h3>
+      <p>Editora responsable. Gestora cultural nacional e internacional, artista integral, escritora, pedagoga y representante legal de la Fundación Artes Multicap.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleColaboradores() {
+    const elem = document.getElementById("colaboradores");
+    elem.style.display = elem.style.display === "none" ? "block" : "none";
+  }
+
+  function toggleJovenes() {
+    const elem = document.getElementById("jovenes");
+    elem.style.display = elem.style.display === "none" ? "block" : "none";
+  }
+</script>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Botón interactivo con luz */
+  #btnColaboradores {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 5px #ffffffaa;
+    box-shadow: 0 0 15px #ffffff33;
+  }
+
+  #btnColaboradores:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px #ffffffaa, 0 0 40px #ffffff77, 0 0 60px #ffffff55;
+    transform: scale(1.05);
+  }
+
+  /* Animación de resplandor */
+  #btnColaboradores {
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px #ffffff33, 0 0 20px #ffffff22;
+    }
+    to {
+      box-shadow: 0 0 20px #ffffffaa, 0 0 40px #ffffff55;
+    }
+  }
+</style>
+
+<script>
+  function toggleColaboradores() {
+    const div = document.getElementById('colaboradores');
+    const btn = document.getElementById('btnColaboradores');
+    if (div.style.display === 'none' || div.style.display === '') {
+      div.style.display = 'block';
+      btn.textContent = "Ocultar artistas colaboradores";
+    } else {
+      div.style.display = 'none';
+      btn.innerHTML = 'Ver lista de artistas colaboradores de la Revista <br> <em>Rostros y Raíces de América Latina</em> Vol. 1, N°1 (Septiembre 2025)';
+    }
+  }
+</script>
+
+
+</p>
+</div>
+
+
+
+<div style="text-align: center; margin-top: 50px;">
+  <h3 style="background-color: transparent; color: #ffffff; text-shadow: 0 0 12px #ff8888; font-weight: normal;">
+    ❤️ Revista sin ánimo de lucro
+  </h3>
+  <p style="color: #cccccc; font-size: 20px;">
+    Gestionado por <strong style="color: #ffffff;">Fundación Artes Multicap</strong>. Proyecto cultural gratuito y colectivo.
+  </p>
+</div>
+
+
+<!-- Sección de apoyo a la iniciativa -->
+<div style="text-align: center; margin-top: 60px;">
+  <h3 style="background-color: transparent; color: #ffffff; text-shadow: 0 0 6px #00ffff; font-weight: normal;">
+    💖 ¿Quieres apoyar esta iniciativa?
+  </h3>
+  <p style="color: #cccccc; font-size: 15px; max-width: 600px; margin: auto; margin-bottom: 20px;">
+    Tu aporte voluntario ayuda a mantener esta revista viva y activa. Cada contribución cuenta 💫
+  </p>
+
+<!-- Botón elegante para mostrar/ocultar medios de apoyo -->
+<button onclick="toggleDonaciones()" class="boton-elegante">
+  👉  Apoyar esta iniciativa 💖
+</button>
+
+<!-- Información desplegable -->
+<div id="donaciones-info" style="display: none; margin-top: 25px; font-size: 16px; color: #f0f0f0; max-width: 500px; margin-left: auto; margin-right: auto; background-color: #111; padding: 20px; border: 1px solid #00ffff; border-radius: 10px; box-shadow: 0 0 15px #00ffff55; text-align: center;">
+
+  <p style="margin-bottom: 20px;"><strong>Elige el medio que prefieras:</strong></p>
+
+ <!-- 💳 Transferencia Nacional Colombia -->
+  
+  <p><strong>💳 Transferencia Nacional (Colombia):</strong> @NEQUIYOB778</p>
+<a href="https://clientes.nequi.com.co/recargas" target="_blank">
+  <img src="https://i.pinimg.com/736x/c4/0a/b0/c40ab01d14db177db1cf5005e57b3d75.jpg" 
+       alt="Transferencia Nacional" 
+       style="width: 120px; margin: 10px; border-radius: 15px; box-shadow: 0 0 12px #00ffff; transition: transform 0.3s;" 
+       onmouseover="this.style.transform='scale(1.05)'" 
+       onmouseout="this.style.transform='scale(1)'">
+</a>
+
+
+ <!-- 🌍 PAGOS INTERNACIONALES -->
+<h2 style="text-align: center; color: #ffffff; font-size: 18px; margin-top: 30px;">
+  🌍 Transferencia Internacionales
+</h2>
+
+
+<!-- 🔵 PayPal -->
+<a href="https://www.paypal.me/yobanaoro82" target="_blank">
+  <img src="https://newsroom.es.paypal-corp.com/image/pp_h_rgb_logo_tn.jpg" 
+       alt="PayPal" 
+       style="width: 110px; margin: 15px; border-radius: 10px; box-shadow: 0 0 10px #00ffff; transition: transform 0.3s;" 
+       onmouseover="this.style.transform='scale(1.05)'" 
+       onmouseout="this.style.transform='scale(1)'">
+</a>
+
+<!-- 🟣 Mercado Pago -->
+<a href="https://link.mercadopago.com.co/artesmulticap" target="_blank">
+  <img src="https://www.valoraanalitik.com/wp-content/uploads/2023/07/Mercado-Pago.jpg" 
+       alt="Mercado Pago" 
+       style="width: 130px; margin: 15px; border-radius: 10px; box-shadow: 0 0 10px #00ffff; transition: transform 0.3s;" 
+       onmouseover="this.style.transform='scale(1.05)'" 
+       onmouseout="this.style.transform='scale(1)'">
+</a>
+
+<!-- 🟡 Western Union -->
+<a href="https://www.westernunion.com/co/es/how-to-send-money.html" target="_blank">
+  <img src="https://e7.pngegg.com/pngimages/408/663/png-clipart-logo-product-design-brand-western-union-font-design-text-label-thumbnail.png" 
+       alt="Western Union" 
+       style="width: 130px; margin: 15px; border-radius: 10px; box-shadow: 0 0 10px #00ffff; transition: transform 0.3s;" 
+       onmouseover="this.style.transform='scale(1.05)'" 
+       onmouseout="this.style.transform='scale(1)'">
+</a>
+<p style="text-align: center; font-size: 16px;">
+  <strong>🏦 Western Union:</strong><br>
+  Yobana Orozco Benavides – Cali, Colombia
+</p>
+
+
+  <p style="font-size: 14px; font-style: italic; color: #cccccc; margin-top: 20px;">
+    Gracias por tu apoyo. Este proyecto existe gracias a personas como tú.
+  </p>
+</div>
+
+<!-- Script para efecto toggle -->
+<script>
+  function toggleDonaciones() {
+    const info = document.getElementById("donaciones-info");
+    if (info.style.display === "none" || info.style.display === "") {
+      info.style.display = "block";
+    } else {
+      info.style.display = "none";
+    }
+  }
+</script>
+  
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DFKYHSHG7R');
+</script>
+
+ <!-- Contador de visitas -->
+  <div style="margin-top: 30px;">
+    <p style="color: #aaaaaa; font-size: 13px; margin-bottom: 5px;">👀 Visitas al sitio:</p>
+    <div id="sfcr2al5k5tsk2tt2ufgfblcsa79xubz8hr" style="margin-bottom: 20px;"></div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=r2al5k5tsk2tt2ufgfblcsa79xubz8hr&down=async" async></script>
+    <noscript>
+      <a href="https://www.freecounterstat.com" title="free website counter">
+        <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=r2al5k5tsk2tt2ufgfblcsa79xubz8hr" border="0" title="free website counter" alt="free website counter">
+      </a>
+    </noscript>
+  </div>
+
+<footer style="background-color: #000000; padding: 40px 20px; font-family: 'Arial', sans-serif; color: #f1f1f1; text-align: center; border-top: 3px solid #ffffff; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); font-size: 11px; line-height: 1.6;">
+
+  <h3 style="font-size: 15px; font-weight: bold; margin-bottom: 10px; color: #ffffff;">
+    © 2023 – 2026 | Explorando Museos y Arte Latinoamericano
+  </h3>
+
+ <p style="max-width: 750px; margin: auto;">
+  Proyecto educativo y cultural <strong>creado por Yobana Orozco Benavides</strong>. 
+  Iniciado en 2023 como un trabajo universitario bajo el nombre 
+  <em>Explorando Museos Nacionales de Colombia</em>. 
+  Desde 2025, el proyecto continúa y se consolida a través de la 
+  <strong>Fundación Artes Multicap</strong> como 
+  <strong>Explorando Museos y Arte Latinoamericano</strong>, una plataforma de difusión artística, pedagógica y cultural para toda Latinoamérica.
+</p>
+
+<div style="margin-top: 24px; text-align: center;">
+  <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img
+      src="https://co.creativecommons.net/wp-content/uploads/sites/27/2008/02/by-nc.png"
+      alt="Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0)"
+      style="max-width: 180px; background-color: transparent; margin-bottom: 10px;">
+  </a>
+
+  <p style="margin: 0; font-size: 12px; color: #ffffff; line-height: 1.5;">
+    <strong>Licencia de uso:</strong><br>
+    Esta obra se publica bajo la
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es"
+       target="_blank"
+       style="color: #d4af37; text-decoration: none; font-weight: 600;">
+      Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0)
+    </a>.
+    <br>
+    El autor o la autora conserva los derechos de su obra.
+    <br>
+    Se permite la consulta, descarga y difusión con reconocimiento de autoría,
+    <strong>sin fines comerciales</strong>.
+  </p>
+</div>
+
+
+
+
+  <p style="margin-top: 15px;">
+    🌐 Bio autora: 
+    <a href="https://yobanaorozcoartista.bio.link/" target="_blank" rel="noopener" style="color: #00e6b8; text-decoration: none;">
+      https://yobanaorozcoartista.bio.link
+    </a>
+  </p>
+
+ <div style="margin-top: 20px; font-size: 1.1em; color: #fcfcfc;">
+    <strong>Depósito Digital Legal:</strong> DD-034370 — Registrado en la Biblioteca Nacional de Colombia<br>
+    Consulta oficial en: 
+    <a href="https://siise.bibliotecanacional.gov.co/" target="_blank" rel="noopener">SIISE</a>
+  </div>
+
+<!-- Logos -->
+<div style="margin-top: 10px; display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+
+  <!-- NUEVOS LOGOS (primera línea, pequeños) -->
+
+  <!-- Repositorio Institucional Universidad del Tolima -->
+  <a href="https://repository.ut.edu.co/" target="_blank">
+    <img src="https://repository.ut.edu.co/assets/custom/images/logo-riut.png"
+         alt="Repositorio Institucional Universidad del Tolima"
+         style="height: 48px; border: none;" />
+  </a>
+
+  <!-- Google Scholar (reemplazado por versión a color) -->
+  <a href="https://scholar.google.com/" target="_blank">
+    <img src="https://revistas.uece.br/public/site/images/padua/google.png"
+         alt="Google Scholar"
+         style="height: 48px; border: none;" />
+  </a>
+
+  <!-- Studocu (reemplazado por versión con fondo más visible) -->
+  <a href="https://www.studocu.com/co/home" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Logo_StuDocu_Wikipedia.png"
+         alt="Studocu"
+         style="height: 48px; border: none;" />
+  </a>
+
+  <!-- Ibero-Cultura Viva (nuevo agregado) -->
+  <a href="https://segib.org/es/iberculturaviva/" target="_blank">
+    <img src="https://segib.org/wp-content/uploads/2022/12/IberculturaViva-1-2048x684.jpg"
+         alt="Ibercultura Viva"
+         style="height: 48px; border: none;" />
+  </a>
+
+  <!-- Academia Logo (nuevo agregado) -->
+  <a href="#" target="_blank">
+    <img src="https://img.freepik.com/premium-vector/academia-logo_1088810-103.jpg"
+         alt="Academia"
+         style="height: 48px; border: none;" />
+  </a>
+
+  <!-- ===== TU BLOQUE ORIGINAL SIN CAMBIOS ===== -->
+
+  <!-- NCBI -->
+  <a href="https://www.ncbi.nlm.nih.gov/myncbi/yobana.orozco%20benavides.1/bibliography/public/" target="_blank">
+    <img src="https://i.postimg.cc/ZKWXhNwT/descarga-1.png" 
+         alt="Bibliografía de Yobana Orozco Benavides" 
+         style="height: 60px; border: none;" />
+  </a>
+
+  <!-- Imagen decorativa -->
+  <img src="https://i.postimg.cc/Vvf1RNwJ/descarga.png" 
+       alt="Imagen decorativa" 
+       style="height: 60px; border: none;" />
+
+  <!-- ORCID -->
+  <a href="https://orcid.org/0009-0002-9253-6429" target="_blank">
+    <img src="https://i.postimg.cc/0ywg7SSt/descarga-3.jpg" 
+         alt="Perfil ORCID de Yobana Orozco Benavides" 
+         style="height: 60px; border: none;" />
+  </a>
+
+  <img src="https://i.postimg.cc/BnqYn1gL/doi-1.png" 
+       alt="DOI de Yobana Orozco Benavides" 
+       style="height: 60px; border: none;" />
+
+  <img src="https://i.postimg.cc/PxG1Ngj3/descarga-2.png" 
+       alt="Icono adicional" 
+       style="height: 60px; border: none;" />
+
+  <img src="https://i.postimg.cc/tC77Qr0Y/descarga-3.png" 
+       alt="Icono adicional 2" 
+       style="height: 60px; border: none;" />
+
+  <img src="https://i.postimg.cc/pVsy6w6w/descarga-4.png" 
+       alt="Icono adicional 3" 
+       style="height: 60px; border: none;" />
+
+  <a href="https://www.openaire.eu/" target="_blank">
+    <img src="https://i.postimg.cc/5tkb3J0g/images.png" 
+         alt="OpenAIRE Plus Logo" 
+         style="height: 60px;">
+  </a>
+
+  <a href="#" target="_blank">
+    <img src="https://i.postimg.cc/85W96grj/Captura-de-pantalla-2025-07-21-231633.png" 
+         alt="Imagen relacionada" 
+         style="height: 60px;">
+  </a>
+
+  <a href="#" target="_blank">
+    <img src="https://i.postimg.cc/wTWf3jbw/webofscience-logo-tm-rgb-color-0.jpg" 
+         alt="Web of Science Logo" 
+         style="height: 60px;">
+  </a>
+
+  <img src="https://i.postimg.cc/TPxD6rqF/descarga-5.png" 
+       alt="Imagen decorativa" 
+       style="height: 60px;">
+
+  <!-- Logos destacados -->
+  <img src="https://i.postimg.cc/jjZ7mqJB/480702220-618041787505911-8280549859336367380-n.jpg" 
+       alt="Logo 1" 
+       style="height: 60px; border-radius: 10px;" />
+
+  <img src="https://i.postimg.cc/KvGnsFtB/Whats-App-Image-2025-06-27-at-9-00-51-AM.jpg" 
+       alt="Logo 2" 
+       style="height: 60px; border-radius: 10px;" />
+
+  <img src="https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-1.jpg" 
+       alt="Logo 3" 
+       style="height: 60px; border-radius: 10px;" />
+
+  <img src="https://i.postimg.cc/kXS9hB6Q/juut.png" 
+       alt="Logo 4" 
+       style="height: 60px; border-radius: 10px;" />
+
+  <img src="https://i.postimg.cc/WbRdhhDh/Captura-de-pantalla-2025-08-08-074913.png" 
+       alt="Logo 5" 
+       style="height: 60px; border-radius: 10px;" />
+
+  <img src="https://i.postimg.cc/jSJy4M71/ert.jpg"
+       alt="Depósito Digital DD-034367"
+       style="width: 140px; border-radius: 12px; box-shadow: 0 8px 0 #444; transition: all 0.3s ease; cursor: pointer;"
+       onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'; this.style.filter='brightness(1.1)'"
+       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 0 #444'; this.style.filter='brightness(1)'"
+       onmousedown="this.style.transform='scale(0.98)'; this.style.boxShadow='0 2px 0 #111'"
+       onmouseup="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 0 #222'">
+
+</div>
+
+
+</footer>
