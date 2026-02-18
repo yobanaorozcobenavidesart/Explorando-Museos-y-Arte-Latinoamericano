@@ -598,6 +598,26 @@
       Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.
     </p>
    
+    <!-- EDICIÓN 2 - NUEVA REVISTA (ARRIBA) -->
+    <div class="revista-latam-container">
+      <h3>Edición 2 - Voces que Habitan el Territorio (2026)</h3>
+      <iframe 
+        allowfullscreen="allowfullscreen" 
+        allow="clipboard-write" 
+        scrolling="no" 
+        class="fp-iframe" 
+        src="https://heyzine.com/flip-book/5bec7efb92.html" 
+        style="border: 1px solid lightgray; width: 100%; height: 400px; border-radius: 8px; box-shadow: 0 0 15px #ffffff55;">
+      </iframe>
+
+      <!-- ENLACE DEL DOI EDICIÓN 2 -->
+      <div style="text-align: center; margin-top: 15px;">
+        <a href="https://doi.org/10.5281/zenodo.18681692" target="_blank" rel="noopener">
+          <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.18681692.svg" alt="DOI Edición 2">
+        </a>
+      </div>
+    </div>
+    
     <iframe 
       src="https://heyzine.com/flip-book/531e2dd77c.html" 
       allowfullscreen="allowfullscreen" 
@@ -792,65 +812,137 @@
     <p id="ubicacion">Cali - Colombia</p>
   </div>
 
-  <!-- SECCIÓN AUTORES (COMPLETA) -->
-  <div id="autores" class="content">
-    <!-- Artistas colaboradores -->
-    <h2 style="color: white; text-align: center;" id="titulo-artistas">Artistas Colaboradores</h2>
-    <div style="text-align: center; margin-top: 20px;">
-      <button onclick="toggleColaboradores()" id="btnColaboradores" class="boton-elegante">
-        Ver lista de artistas colaboradores de la Revista <br> 
-        <em>Rostros y Raíces de América Latina</em> Vol. 1, N°1 (Septiembre 2025)
-      </button>
+  <!-- SECCIÓN AUTORES (COMPLETA) - ACTUALIZADA CON DISEÑO DE 2 COLUMNAS -->
+<div id="autores" class="content">
+  <h2 style="color: white; text-align: center;" id="titulo-artistas">Artistas Colaboradores</h2>
+  
+  <!-- CONTENEDOR PRINCIPAL DE 2 COLUMNAS -->
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px;">
+    
+    <!-- COLUMNA IZQUIERDA - REVISTAS ARTE Y CULTURA LATINOAMÉRICA -->
+    <div style="flex: 1; min-width: 300px;">
+      
+      <!-- EDICIÓN 2 - VOCES QUE HABITAN EL TERRITORIO (ARRIBA) -->
+      <div style="margin-bottom: 30px; background-color: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33;">
+        <h3 style="color: #ffd966; text-align: center; margin-top: 0; border-bottom: 1px solid #666; padding-bottom: 10px;">
+          Edición 2 - Voces que Habitan el Territorio (2026)
+        </h3>
+        
+        <button onclick="toggleEdicion2()" id="btnEdicion2" class="boton-elegante" style="width: 100%; margin-bottom: 15px;">
+          Ver artistas colaboradores Edición 2
+        </button>
 
-      <div id="colaboradores" style="display: none; margin-top: 20px; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; background: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33; color: white;">
-        <ul id="lista-colaboradores" style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
-          <li>🇲🇽 <strong>Ricardo Hernández Cruz</strong> (México, Villahermosa – Tabasco)</li>
-          <li>🇨🇴 <strong>Sloth</strong> (Colombia, Bogotá)</li>
-          <li>🇨🇴 <strong>Leidy Yobana Niño Barón</strong> (Colombia, Guacamayas – Boyacá)</li>
-          <li>🇨🇴 <strong>Edwin López Fajardo</strong> (Colombia, Garzón – Huila)</li>
-          <li>🇨🇴 <strong>Nenfis Perilla</strong> (Colombia, Garzón – Huila)</li>
-          <li>🇪🇨 <strong>Fernando Freire Manzano – Kolibry</strong> (Ecuador, Guayaquil)</li>
-          <li>🇳🇮 <strong>Luisa Amanda Solano Mendoza</strong> (Nicaragua, Corinto / Italia)</li>
-          <li>🇨🇴 <strong>Yobana Orozco Benavides</strong> (Colombia, Cali – Valle del Cauca)</li>
-          <li>🏛️ <strong>Museo Itinerante del Patrimonio</strong> (Ecuador, fundadores: Fernando Freire Manzano y Renée Paredes González)</li>
-        </ul>
+        <div id="edicion2" style="display: none; text-align: left; background: #1a1a1a; padding: 20px; border-radius: 12px; color: white;">
+          <h4 style="color: #ffd966; margin-top: 0;">Artes Visuales y Plásticas:</h4>
+          <ul style="list-style: none; padding: 0; font-size: 15px; line-height: 1.8;">
+            <li>🇨🇴 <strong>Karina Piedrahíta Taborda</strong> (Colombia)</li>
+            <li>🇨🇴 <strong>Diego Cárdenas Hernández</strong> (Colombia)</li>
+            <li>🇨🇴 <strong>Luis Guillermo Romero</strong> (Colombia)</li>
+            <li>🇨🇴 <strong>Edwin López Fajardo</strong> (Colombia)</li>
+            <li>🇨🇴 <strong>Leidy Yobana Niño Barón</strong> (Colombia)</li>
+            <li>🇺🇾 <strong>María Noel Rabuñal Cantero</strong> (Uruguay)</li>
+            <li>🇮🇹/🇳🇮 <strong>Luisa Amanda Solano Mendoza</strong> (Italia/Nicaragua)</li>
+            <li>🇦🇷 <strong>Milagros Juez – Jumii</strong> (Argentina)</li>
+            <li>🇨🇷 <strong>Rafael Ángel Fonseca Herrera</strong> (Costa Rica)</li>
+            <li>🇵🇾 <strong>Ronaldo Unruh Servin – Lanto’oy Unruh</strong> (Paraguay)</li>
+            <li>🇲🇽 <strong>Edith Castrejón Martínez – Edith Castmart</strong> (México)</li>
+            <li>🇲🇽 <strong>Ricardo Hernández Cruz</strong> (México)</li>
+            <li>🇨🇴 <strong>Christian Schrader Valencia</strong> (Colombia)</li>
+            <li>🇨🇴 <strong>Yobana Orozco Benavides</strong> (Colombia)</li>
+          </ul>
+
+          <h4 style="color: #ffd966; margin-top: 20px;">Literatura, investigación y producción escrita:</h4>
+          <ul style="list-style: none; padding: 0; font-size: 15px; line-height: 1.8;">
+            <li>🇦🇷 <strong>Ricardo Javier Villalba</strong> (Argentina)</li>
+            <li>🇵🇪 <strong>Anthony Josue Flores Reyes</strong> (Perú)</li>
+            <li>🇵🇾 <strong>Manolo Romero Juancito</strong> (Paraguay)</li>
+            <li>🇵🇾 <strong>Rosa Beatriz López Chaparro</strong> (Paraguay)</li>
+            <li>🇧🇷 <strong>Lydia Lucia Nunes de Sousa</strong> (Brasil)</li>
+            <li>🇨🇴 <strong>Jhonathan Giusseppe</strong> (Colombia)</li>
+          </ul>
+        </div>
       </div>
+      
+      <!-- EDICIÓN 1 - ROSTROS Y RAÍCES (ABAJO) -->
+      <div style="background-color: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33;">
+        <h3 style="color: #ffd966; text-align: center; margin-top: 0; border-bottom: 1px solid #666; padding-bottom: 10px;">
+          Edición 1 - Rostros y Raíces de América Latina (2025)
+        </h3>
+        
+        <button onclick="toggleColaboradores()" id="btnColaboradores" class="boton-elegante" style="width: 100%; margin-bottom: 15px;">
+          Ver artistas colaboradores Edición 1
+        </button>
 
-      <!-- Nuevo botón: Jóvenes Artistas -->
-      <button onclick="toggleJovenes()" id="btnJovenes" class="boton-elegante" style="margin-top: 20px;">
-        Ver lista de jóvenes artistas colaboradores de la Revista <br>
-        <em>Explosión Creativa en América Latina</em> Vol. 1, N°1 (Octubre 2025)
-      </button>
-
-      <div id="jovenes" style="display: none; margin-top: 20px; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; background: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33; color: white;">
-        <ul id="lista-jovenes" style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
-          <li><strong>Jóvenes Artistas Participantes – Artes Plásticas y Visuales</strong></li>
-          <li>María Camila Tuquerres Ruiz</li>
-          <li>Luciana Ortega López</li>
-          <li>David Rosero Orozco</li>
-          <li>Luis Eduardo Moreno</li>
-          <li>Ashly Muñoz</li>
-          <li>María Camila Higuita</li>
-          <li>Daniel Alexander Ortiz Orozco</li>
-          <li>Valeria Castillo Pinto</li>
-          <br>
-          <li><strong>Artistas Participantes – Literatura</strong></li>
-          <li>Valeria Ramírez Berrío</li>
-          <br>
-          <li><strong>Artistas Participantes – Fotografía</strong></li>
-          <li>Diego Andrés Montenegro Villar</li>
-          <br>
-          <li><strong>Instituciones educativas aliadas</strong></li>
-          <li>Centro Educativo Sebastián De Belalcázar</li>
-          <li>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0jBM6u9VrHlJubeMAW8Dwo9kSvFDwdGXB2A&s" 
-                 alt="Logo Centro Educativo Sebastián De Belalcázar" 
-                 style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 0 10px #ffffff55;" />
-          </li>
-        </ul>
+        <div id="colaboradores" style="display: none; text-align: left; background: #1a1a1a; padding: 20px; border-radius: 12px; color: white;">
+          <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
+            <li>🇲🇽 <strong>Ricardo Hernández Cruz</strong> (México, Villahermosa – Tabasco)</li>
+            <li>🇨🇴 <strong>Sloth</strong> (Colombia, Bogotá)</li>
+            <li>🇨🇴 <strong>Leidy Yobana Niño Barón</strong> (Colombia, Guacamayas – Boyacá)</li>
+            <li>🇨🇴 <strong>Edwin López Fajardo</strong> (Colombia, Garzón – Huila)</li>
+            <li>🇨🇴 <strong>Nenfis Perilla</strong> (Colombia, Garzón – Huila)</li>
+            <li>🇪🇨 <strong>Fernando Freire Manzano – Kolibry</strong> (Ecuador, Guayaquil)</li>
+            <li>🇳🇮 <strong>Luisa Amanda Solano Mendoza</strong> (Nicaragua, Corinto / Italia)</li>
+            <li>🇨🇴 <strong>Yobana Orozco Benavides</strong> (Colombia, Cali – Valle del Cauca)</li>
+            <li>🏛️ <strong>Museo Itinerante del Patrimonio</strong> (Ecuador, fundadores: Fernando Freire Manzano y Renée Paredes González)</li>
+          </ul>
+        </div>
       </div>
     </div>
+    
+    <!-- COLUMNA DERECHA - JÓVENES CREADORES -->
+    <div style="flex: 1; min-width: 300px;">
+      <div style="background-color: #111; padding: 20px; border-radius: 12px; box-shadow: 0 0 15px #ffffff33;">
+        <h3 style="color: #ffd966; text-align: center; margin-top: 0; border-bottom: 1px solid #666; padding-bottom: 10px;">
+          Jóvenes Creadores de Latinoamérica
+        </h3>
+        <h4 style="color: #ffffff; text-align: center; margin-top: 5px; font-style: italic;">
+          Explosión Creativa en América Latina Vol. 1, N°1 (Octubre 2025)
+        </h4>
+        
+        <button onclick="toggleJovenes()" id="btnJovenes" class="boton-elegante" style="width: 100%; margin: 15px 0;">
+          Ver jóvenes artistas colaboradores
+        </button>
 
+        <div id="jovenes" style="display: none; text-align: left; background: #1a1a1a; padding: 20px; border-radius: 12px; color: white;">
+          <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8;">
+            <li><strong>Jóvenes Artistas Participantes – Artes Plásticas y Visuales</strong></li>
+            <li>María Camila Tuquerres Ruiz</li>
+            <li>Luciana Ortega López</li>
+            <li>David Rosero Orozco</li>
+            <li>Luis Eduardo Moreno</li>
+            <li>Ashly Muñoz</li>
+            <li>María Camila Higuita</li>
+            <li>Daniel Alexander Ortiz Orozco</li>
+            <li>Valeria Castillo Pinto</li>
+            <br>
+            <li><strong>Artistas Participantes – Literatura</strong></li>
+            <li>Valeria Ramírez Berrío</li>
+            <br>
+            <li><strong>Artistas Participantes – Fotografía</strong></li>
+            <li>Diego Andrés Montenegro Villar</li>
+            <br>
+            <li><strong>Instituciones educativas aliadas</strong></li>
+            <li>Centro Educativo Sebastián De Belalcázar</li>
+            <li>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0jBM6u9VrHlJubeMAW8Dwo9kSvFDwdGXB2A&s" 
+                   alt="Logo Centro Educativo Sebastián De Belalcázar" 
+                   style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 0 10px #ffffff55; margin-top: 10px;" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+<!-- Script adicional para el nuevo botón de Edición 2 -->
+<script>
+  function toggleEdicion2() {
+    const elem = document.getElementById("edicion2");
+    elem.style.display = elem.style.display === "none" ? "block" : "none";
+  }
+</script>
     <!-- Autora del sitio -->
     <h2 style="color: white; text-align: center; margin-top: 50px;" id="titulo-autora">Autora</h2>
     <div class="authors-container" style="display: flex; flex-direction: column; align-items: center;">
