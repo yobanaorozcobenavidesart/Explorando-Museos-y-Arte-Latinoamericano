@@ -205,6 +205,62 @@
       text-align: center;
       margin-top: 15px;
     }
+
+    /* Estilos para la sección de reconocimientos */
+    .reconocimiento-card {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      border: 1px solid #ffd96655;
+    }
+    .reconocimiento-card h3 {
+      color: #ffd966;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .reconocimiento-doble {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .reconocimiento-imagen {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+    .reconocimiento-imagen img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      border: 1px solid #ffd966;
+    }
+    .reconocimiento-video {
+      flex: 1;
+      min-width: 250px;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 768px) {
+      .reconocimiento-doble {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -399,6 +455,9 @@
     <button onclick="toggleContent('servicios')" id="nav-servicios">Servicios</button>
     <button onclick="window.open('https://forms.gle/16ojPMq5cWfMFbGw9', '_blank');" id="nav-opinion">tu opinión</button>
     <button onclick="toggleContent('contacto')" id="nav-contacto">Contacto</button>
+    
+    <!-- NUEVO BOTÓN RECONOCIMIENTOS AGREGADO -->
+    <button onclick="toggleContent('reconocimientos')" id="nav-reconocimientos" style="background: #d4af37; color: #000; border-color: #b8942e;">🏆 Reconocimientos</button>
   </nav>
 
   <!-- SECCIÓN INICIO (COMPLETA) -->
@@ -1093,6 +1152,38 @@
     </div>
   </div>
 
+  <!-- NUEVA SECCIÓN RECONOCIMIENTOS AGREGADA -->
+  <div id="reconocimientos" class="content">
+    <h2 id="reconocimientos-titulo" style="color: #ffd966; text-align: center; margin-bottom: 30px;">🏆 Reconocimientos y Logros</h2>
+    
+    <div class="reconocimiento-card">
+      <h3 id="reconocimientos-subtitulo">📜 Certificado Ganador Convocatoria FESTIVAL SUCURSAL FEST 2025</h3>
+      <div class="reconocimiento-doble">
+        <div class="reconocimiento-imagen">
+          <img src="https://i.postimg.cc/fLZ52hGS/Yobana-Orozco-Benavides-(1)-(1)-page-0001.jpg" alt="Certificado Festival Sucursal Fest 2025">
+          <p style="font-size: 14px; color: #aaa; margin-top: 10px;" id="reconocimientos-certificado-texto">📄 Resolución N° 4148.030.21.1.914.000304 DEL 09 DE SEPTIEMBRE DE 2025</p>
+          <p style="margin-top: 10px;"><a href="https://www.cali.gov.co/cultura/publicaciones/184780/resoluciones-y-publicaciones-convocatoria-de-estimulos-cali-2025/" target="_blank" style="color: #ffd966;" id="reconocimientos-enlace">🔗 Ver resolución oficial en la página de la Secretaría de Cultura de Cali</a></p>
+        </div>
+        <div class="reconocimiento-video">
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Pvpquj1FtcE?si=moh_pRGcZKREbgKr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p style="text-align: center; margin-top: 15px;" id="reconocimientos-video-texto">Participación en la X versión del Festival Sucursal Fest - Festival de la diversidad 2025</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="reconocimiento-card">
+      <h3 id="reconocimientos-otros-titulo">Más reconocimientos</h3>
+      <ul id="reconocimientos-otros-lista" style="font-size: 16px; line-height: 1.8;">
+        <li> Ganadora Estímulo Artes Audiovisuales – Secretaría de Cultura de Cali 2025</li>
+        <li>Revistas indexadas en Google Scholar, OpenAIRE, Studocu y repositorios nacionales</li>
+        <li>Plataforma reconocida por IberCultura Viva como proyecto cultural destacado</li>
+        <li>Indexación en la Biblioteca Nacional de Colombia y repositorios institucionales</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Script principal -->
   <script>
     // Textos en diferentes idiomas (COMPLETOS)
@@ -1114,6 +1205,16 @@
         'nav-servicios': 'Servicios',
         'nav-opinion': 'tu opinión',
         'nav-contacto': 'Contacto',
+        'nav-reconocimientos': '🏆 Reconocimientos',
+        
+        // Sección Reconocimientos
+        'reconocimientos-titulo': '🏆 Reconocimientos y Logros',
+        'reconocimientos-subtitulo': '📜 Certificado Ganador Convocatoria FESTIVAL SUCURSAL FEST 2025',
+        'reconocimientos-certificado-texto': 'Resolución N° 4148.030.21.1.914.000304 DEL 09 DE SEPTIEMBRE DE 2025',
+        'reconocimientos-enlace': '🔗 Ver resolución oficial en la página de la Secretaría de Cultura de Cali',
+        'reconocimientos-video-texto': 'Participación en la X versión del Festival Sucursal Fest - Festival de la diversidad 2025',
+        'reconocimientos-otros-titulo': 'Más reconocimientos',
+        'reconocimientos-otros-lista': '<li>Ganadora Estímulo Artes Audiovisuales – Secretaría de Cultura de Cali 2025</li><li>Revistas indexadas en Google Scholar, OpenAIRE, Studocu y repositorios nacionales</li><li>Plataforma reconocida por IberCultura Viva como proyecto cultural destacado</li><li>Indexación en la Biblioteca Nacional de Colombia y repositorios institucionales</li>',
         
         // Sección Inicio
         'titulo-inicio': '¡Bienvenidas y bienvenidos a Explorando Museos y Arte Latinoamericano!',
@@ -1179,8 +1280,8 @@
         // Sección Podcast
         'titulo-podcast': 'Podcast',
         'subtitulo-spotify': '🎧 Escuchar en Spotify',
-        'subtitulo-youtube1': '📺 Ver en YouTube',
-        'subtitulo-youtube2': '📺 Ver en YouTube',
+        'subtitulo-youtube1': 'Ver en YouTube',
+        'subtitulo-youtube2': 'Ver en YouTube',
         
         // Sección Servicios
         'titulo-servicios': 'Servicios',
@@ -1215,6 +1316,14 @@
         'nav-servicios': 'Services',
         'nav-opinion': 'your opinion',
         'nav-contacto': 'Contact',
+        'nav-reconocimientos': '🏆 Recognitions',
+        'reconocimientos-titulo': 'Recognitions and Achievements',
+        'reconocimientos-subtitulo': '📜 Certificate Winner FESTIVAL SUCURSAL FEST 2025 Call',
+        'reconocimientos-certificado-texto': 'Resolution N° 4148.030.21.1.914.000304 OF SEPTEMBER 09, 2025',
+        'reconocimientos-enlace': '🔗 View official resolution on the Cali Secretary of Culture website',
+        'reconocimientos-video-texto': 'Participation in the X version of the Sucursal Fest - Diversity Festival 2025',
+        'reconocimientos-otros-titulo': 'More recognitions',
+        'reconocimientos-otros-lista': '<li> Winner Audiovisual Arts Stimulus – Cali Secretary of Culture 2025</li><li> Journals indexed in Google Scholar, OpenAIRE, Studocu and national repositories</li><li> Platform recognized by IberCultura Viva as a outstanding cultural project</li><li> Indexing in the National Library of Colombia and institutional repositories</li>',
         'titulo-inicio': 'Welcome to Exploring Museums and Latin American Art!',
         'descripcion-inicio1': 'Exploring Museums and Latin American Art is an artistic, cultural, educational, and transmedia platform, created from Latin America to showcase, explore, and connect the richness of art, museums, and cultural expressions of our continent.',
         'descripcion-inicio2': 'What started in Colombia as a university project focused on national museums is now an expanded ecosystem that integrates:',
@@ -1294,6 +1403,14 @@
         'nav-servicios': 'Services',
         'nav-opinion': 'ton opinion',
         'nav-contacto': 'Contact',
+        'nav-reconocimientos': '🏆 Reconnaissances',
+        'reconocimientos-titulo': 'Reconnaissances et Réalisations',
+        'reconocimientos-subtitulo': '📜 Certificat Gagnant Appel FESTIVAL SUCURSAL FEST 2025',
+        'reconocimientos-certificado-texto': 'Résolution N° 4148.030.21.1.914.000304 DU 09 SEPTEMBRE 2025',
+        'reconocimientos-enlace': '🔗 Voir la résolution officielle sur le site de la Secrétaire de Culture de Cali',
+        'reconocimientos-video-texto': 'Participation à la Xème édition du Festival Sucursal Fest - Festival de la diversité 2025',
+        'reconocimientos-otros-titulo': 'Plus de reconnaissances',
+        'reconocimientos-otros-lista': '<li>Gagnante Stimulation Arts Audiovisuels – Secrétaire de Culture de Cali 2025</li><li>Revues indexées dans Google Scholar, OpenAIRE, Studocu et dépôts nationaux</li><li>Plateforme reconnue par IberCultura Viva comme projet culturel remarquable</li><li>Indexation à la Bibliothèque Nationale de Colombie et dépôts institutionnels</li>',
         'titulo-inicio': 'Bienvenue à Exploration des Musées et de l\'Art Latino-américain!',
         'descripcion-inicio1': 'Exploration des Musées et de l\'Art Latino-américain est une plateforme artistique, culturelle, éducative et transmédia, créée depuis l\'Amérique Latine pour rendre visible, explorer et connecter la richesse de l\'art, des musées et des expressions culturelles de notre continent.',
         'descripcion-inicio2': 'Ce qui a commencé en Colombie comme un projet universitaire centré sur les musées nationaux est aujourd\'hui un écosystème élargi qui intègre:',
@@ -1343,8 +1460,8 @@
         'enlace-cuento': 'MARCOS ET LES CHIOTS DU SOMMET par YOBANA OROZCO',
         'titulo-podcast': 'Podcast',
         'subtitulo-spotify': '🎧 Écouter sur Spotify',
-        'subtitulo-youtube1': '📺 Voir sur YouTube',
-        'subtitulo-youtube2': '📺 Voir sur YouTube',
+        'subtitulo-youtube1': 'Voir sur YouTube',
+        'subtitulo-youtube2': 'Voir sur YouTube',
         'titulo-servicios': 'Services',
         'lista-servicios': '<li>Revues numériques interactives sur les musées, l\'art, la culture et la littérature latino-américaine</li><li>Appels ouverts pour artistes latino-américains</li><li>Publication d\'œuvres visuelles, de textes littéraires et de projets culturels</li><li>Accompagnement éditorial et diffusion numérique des artistes sélectionnés</li><li>Histoires animées et narrées pour le public enfant et jeune</li><li>Jeux éducatifs avec une approche culturelle et pédagogique</li><li>Podcasts culturels avec des invités de toute l\'Amérique Latine</li><li>Conception de contenus transmédia et d\'expériences interactives</li>',
         'titulo-contacto': 'Contact',
@@ -1373,6 +1490,14 @@
         'nav-servicios': 'Serviços',
         'nav-opinion': 'sua opinião',
         'nav-contacto': 'Contato',
+        'nav-reconocimientos': '🏆 Reconhecimentos',
+        'reconocimientos-titulo': 'Reconhecimentos e Conquistas',
+        'reconocimientos-subtitulo': '📜 Certificado Vencedor Chamada FESTIVAL SUCURSAL FEST 2025',
+        'reconocimientos-certificado-texto': 'Resolução N° 4148.030.21.1.914.000304 DE 09 DE SETEMBRO DE 2025',
+        'reconocimientos-enlace': '🔗 Ver resolução oficial no site da Secretaria de Cultura de Cali',
+        'reconocimientos-video-texto': 'Participação na X edição do Festival Sucursal Fest - Festival da diversidade 2025',
+        'reconocimientos-otros-titulo': 'Mais reconhecimentos',
+        'reconocimientos-otros-lista': '<li>Vencedora Estímulo Artes Audiovisuais – Secretaria de Cultura de Cali 2025</li><li>Revistas indexadas no Google Scholar, OpenAIRE, Studocu e repositórios nacionais</li><li>Plataforma reconhecida pela IberCultura Viva como projeto cultural destacado</li><li>Indexação na Biblioteca Nacional da Colômbia e repositórios institucionais</li>',
         'titulo-inicio': 'Bem-vindas e bem-vindos a Explorando Museus e Arte Latino-americana!',
         'descripcion-inicio1': 'Explorando Museus e Arte Latino-americana é uma plataforma artística, cultural, educativa e transmídia, criada desde a América Latina para visibilizar, explorar e conectar a riqueza da arte, dos museus e das expressões culturais de nosso continente.',
         'descripcion-inicio2': 'O que começou na Colômbia como um projeto universitário centrado em museus nacionais, hoje é um ecossistema expandido que integra:',
@@ -1422,8 +1547,8 @@
         'enlace-cuento': 'MARCOS E OS FILHOTES DA CUME por YOBANA OROZCO',
         'titulo-podcast': 'Podcast',
         'subtitulo-spotify': '🎧 Ouvir no Spotify',
-        'subtitulo-youtube1': '📺 Ver no YouTube',
-        'subtitulo-youtube2': '📺 Ver no YouTube',
+        'subtitulo-youtube1': 'Ver no YouTube',
+        'subtitulo-youtube2': 'Ver no YouTube',
         'titulo-servicios': 'Serviços',
         'lista-servicios': '<li>Revistas digitais interativas sobre museus, arte, cultura e literatura latino-americana</li><li>Chamadas abertas para artistas latino-americanos</li><li>Publicação de obras visuais, textos literários e projetos culturais</li><li>Acompanhamento editorial e difusão digital dos artistas selecionados</li><li>Contos animados e narrados para público infantil e juvenil</li><li>Jogos educativos com enfoque cultural e pedagógico</li><li>Podcasts culturais com convidados de toda a América Latina</li><li>Design de conteúdos transmídia e experiências interativas</li>',
         'titulo-contacto': 'Contato',
@@ -1467,7 +1592,8 @@
         if (element) {
           // Para elementos que pueden contener HTML
           if (key === 'lista-ecosistema' || key === 'lista-crean' || 
-              key === 'lista-servicios' || key === 'mensaje-final') {
+              key === 'lista-servicios' || key === 'mensaje-final' ||
+              key === 'reconocimientos-otros-lista') {
             element.innerHTML = value;
           } else if (element.tagName === 'BUTTON' || element.tagName === 'A') {
             // Para botones y enlaces
