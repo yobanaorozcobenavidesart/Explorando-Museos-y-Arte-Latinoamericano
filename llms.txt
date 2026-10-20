@@ -1,0 +1,24 @@
+# Explorando Museos y Arte Latinoamericano
+
+> Plataforma artística, cultural, educativa y transmedia creada desde Cali, Colombia, por Yobana Orozco Benavides y respaldada por la Fundación Artes Multicap. Reúne tres revistas digitales de acceso abierto con ISSN, podcasts, cuentos animados, juegos y convocatorias sobre museos y arte de Latinoamérica. Contenidos bajo licencia CC BY-NC 4.0.
+
+Origen: nació en noviembre de 2023 como trabajo universitario en la Universidad del Tolima (visita al Museo El Rayo) y desde 2025 se consolida como plataforma latinoamericana. Depósito Digital Legal DD-034370 (Biblioteca Nacional de Colombia).
+
+## Revistas
+- [Explorando Museos Nacionales de Colombia](https://seccionmuseosnacionalesdecolombia.netlify.app/): ISSN 3114-9243, cuatrimestral, patrimonio museal colombiano.
+- [Explorando Arte y Cultura de Latinoamérica](https://seccionrevistasexplorandoarteycultura.netlify.app/): ISSN 3114-9871, semestral, artistas mayores de edad de la región.
+- [Jóvenes Creadores de Latinoamérica](https://seccionrevistajovenescreadores.netlify.app/): ISSN 3115-0357, semestral, niños y jóvenes de 8 a 17 años.
+
+## Secciones
+- [Inicio y plataforma](https://explorandomuseosyartelatinoamericano.netlify.app/): misión, visión, historia, servicios, reconocimientos.
+- [Convocatorias](https://paginaconvocatoriatoas.netlify.app/): convocatorias abiertas para artistas.
+- [Políticas editoriales](https://pol-ticaseditoriales.netlify.app/)
+- [Fragmentos en Audio](https://fragmentosenaudio.netlify.app/): fragmentos narrados de libros, episodios semanales.
+- [Juegos de las revistas](https://juegosmuseosnacionalescolombia.netlify.app/)
+- [Fundación Artes Multicap](https://fundacion-artes-multicap.netlify.app/)
+
+## Contacto
+- Cali, Valle del Cauca, Colombia
+- WhatsApp: +57 3113555949
+- explorandomuseosnacionalesdecolo@yahoo.com · artesmulticap2024@gmail.com
+- Idiomas del sitio: español, inglés, francés y portugués.
